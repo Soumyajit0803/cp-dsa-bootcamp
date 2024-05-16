@@ -1,0 +1,58 @@
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* background-color: red; */
+}
+
+.intro .banner {
+    width: 50%;
+}
+
+.intro .banner img {
+    width: 100%;
+    position: relative;
+    left: 32px;
+}
+
+.intro .info {
+    flex-grow: 1;
+    width: 30ch;
+    /* padding: 2rem */
+}
+
+.intro .info .heading,
+.team .heading {
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.gradient-text {
+    background: linear-gradient(120deg, var(--text-gradient-1), var(--text-gradient-2));
+    /* Add text styles */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.intro .info .content {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: left;
+    line-height: 1.4em;
+    color: var(--normal-text);
+}
+
+.team {
+    margin-top: 8rem;
+}
+
+.team .teams-list {
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+    gap: 2rem
+}
