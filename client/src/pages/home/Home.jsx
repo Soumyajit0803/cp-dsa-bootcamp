@@ -2,6 +2,8 @@ import React from "react";
 import banner from "../../assets/banner.png";
 import NameCard from "../../components/NameCard/NameCard";
 import "./home.css";
+import {Button} from "@mui/material"
+import SendIcon from '@mui/icons-material/Send';
 
 const Home = () => {
     return (
@@ -24,10 +26,23 @@ function Introduction() {
                     <span className="gradient-text">like never before</span>
                 </div>
                 <div className="content">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi labore eaque deleniti doloribus. At
-                    molestias rerum recusandae, voluptatum enim omnis, porro optio sint quos quod fugiat sit quia odio
-                    inventore?
+                Unlock your potential and skyrocket your programming skills with our intensive DSA Bootcamp. Join a community of passionate learners and seasoned instructors dedicated to your success.
                 </div>
+                <Button
+                    sx={{
+                        border: "1px solid green",
+                        color: "white",
+                        fontWeight: 600,
+                        textDecoration: "none",
+                        marginTop: "1.5rem",
+                        fontSize: "1rem",          
+                    }}
+                    endIcon = { <SendIcon />}
+                    color="primary"
+                    variant="contained"
+                >
+                    Register Now
+                </Button>
             </div>
             <div className="banner">
                 <img src={banner} alt="banner img" />

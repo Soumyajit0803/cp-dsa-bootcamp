@@ -3,7 +3,7 @@ import {
     Menu,
     MenuItem,
     AppBar,
-    Toolbar,
+    Box,
     Typography,
     useMediaQuery,
     useTheme,
@@ -13,7 +13,7 @@ import {
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Codeiiest from "../../assets/codeiiest.png";
-import "./Header.css"
+import "./Header.css";
 
 import { Link, NavLink } from "react-router-dom";
 
@@ -31,34 +31,34 @@ const Menubutton = () => {
     };
 
     return (
-        <Toolbar sx={{ marginLeft: "auto" }}>
+        <Box sx={{ paddingRight: 1 }}>
             <IconButton onClick={handleClick}>
-                <MenuIcon sx = {{color: "white"}} />
+                <MenuIcon sx={{ color: "white" }} />
             </IconButton>
             <Menu anchorEl={anchorElm} open={open} onClose={handleClose}>
                 <NavLink style={{ textDecoration: "none" }} to="/leaderboard">
-                    <MenuItem sx = {{textDecoration: "none", color: "black"}} onClick={handleClose}>
+                    <MenuItem sx={{ textDecoration: "none", color: "black" }} onClick={handleClose}>
                         Leaderboard
                     </MenuItem>
                 </NavLink>
                 <NavLink style={{ textDecoration: "none" }} to="/contest">
-                    <MenuItem sx = {{textDecoration: "none", color: "black"}} onClick={handleClose}>
+                    <MenuItem sx={{ textDecoration: "none", color: "black" }} onClick={handleClose}>
                         Contest
                     </MenuItem>
                 </NavLink>
                 <NavLink style={{ textDecoration: "none" }} to="/resources">
-                    <MenuItem sx = {{textDecoration: "none", color: "black"}} onClick={handleClose}>
+                    <MenuItem sx={{ textDecoration: "none", color: "black" }} onClick={handleClose}>
                         Resources{" "}
                     </MenuItem>
                 </NavLink>
             </Menu>
-        </Toolbar>
+        </Box>
     );
 };
 
 const HeaderTabs = () => {
     return (
-        <ButtonGroup sx={{ textDecoration: "none" }} >
+        <ButtonGroup sx={{ textDecoration: "none" }}>
             <NavLink className="navlink" to="/leaderboard">
                 <Button
                     sx={{
@@ -66,7 +66,6 @@ const HeaderTabs = () => {
                         color: "white",
                         fontWeight: 600,
                         textDecoration: "none",
-                        
                     }}
                     color="inherit"
                 >
@@ -81,7 +80,6 @@ const HeaderTabs = () => {
                         backgroundColor: "inherit",
                         fontWeight: 600,
                         textDecoration: "none",
-                        
                     }}
                     color="inherit"
                 >
@@ -95,9 +93,8 @@ const HeaderTabs = () => {
                         color: "white",
                         backgroundColor: "none",
                         fontWeight: 600,
-                        
-                        textDecoration: "none"
 
+                        textDecoration: "none",
                     }}
                     color="inherit"
                 >
@@ -113,26 +110,40 @@ const Header = () => {
     const mobileView = useMediaQuery(theme.breakpoints.down(800));
     return (
         <>
-            <AppBar sx={{
-                height: "60px",
-                backgroundColor: "#242424" }}>
-                <Toolbar sx={{ display: "flex", alignItems: "center", textDecoration: "none", color: "white" }}>
-                    <Link to = "/">
-                    <img src={Codeiiest} alt="appIcon" style={{ width: "2.5rem", marginRight: "0.8rem" }} /></Link>
-                    <Typography
-                        variant="body1"
-                        sx={{
-                            fontSize: "1.3rem",
-                            flexGrow: 1,
-                            color: "white",
-                            fontFamily: "poppins",
-                            fontWeight: 600,
-                        }}
-                    >
-                        {mobileView ? "Bootcamp" : "CP/DSA Bootcamp"}
-                    </Typography>
-                    {mobileView ? <Menubutton /> : <HeaderTabs />}
-                </Toolbar>
+            <AppBar
+                sx={{
+                    backgroundColor: "var(--headercolor)",
+                    // backdropFilter: "blur(10px)",
+                    py: 0.5,
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                }}
+            >
+                <Box
+                    sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        paddingLeft: 2,
+                        minHeight: "50px",
+                    }}
+                >
+                    <Link style = {{textDecoration: "none", display: "flex", alignItems: "center"}} to="/">
+                        <img src={Codeiiest} alt="appIcon" style={{ width: "2.5rem", marginRight: "0.5rem" }} />
+
+                        <Typography
+                            variant="h5"
+                            sx={{
+                                color: "white",
+                                fontWeight: 600,
+                            }}
+                        >
+                            {mobileView ? "Bootcamp" : "CP/DSA Bootcamp"}
+                        </Typography>
+                    </Link>
+                </Box>
+                {mobileView ? <Menubutton /> : <HeaderTabs />}
             </AppBar>
         </>
     );

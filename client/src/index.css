@@ -11,16 +11,12 @@
     --expert-bg: rgba(37, 134, 248, 29%);
     --text-gradient-1: #2586f8;
     --text-gradient-2: #25f893;
+    --headercolor: rgb(32, 32, 32);
     --normal-text: #ffffffbb;
     font-family: "Roboto", sans-serif;
     color: #fff;
 }
 
 body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
     background-color: #0f1214;
 }
