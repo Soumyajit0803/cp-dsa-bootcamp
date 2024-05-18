@@ -13,13 +13,13 @@ function NameCard({ profilepic, name, cf_rating, cc_rating, cf_handle, cc_handle
             </div>
             <div className="name">{name}</div>
             <div className="flexing">
-                <a href={`https://codeforces.com/profile/${cf_handle}`}>
+                <a href={`https://codeforces.com/profile/${cf_handle}`} target="_blank" rel="noreferrer noopener" >
                     <div className={cf_rating.toLowerCase()}>
                         <img src={cf} className="cf-img" />
                         {cf_rating}
                     </div>
                 </a>
-                <a href={`https://www.codechef.com/users/${cc_handle}`}>
+                <a href={`https://www.codechef.com/users/${cc_handle}`} target="blank" rel="noreferrer noopener" >
                     <div className={`cc-${cc_rating}`} style={{ lineHeight: "1.22em" }}>
                         <Codechef cls={"cf-iconbutton"} color={"#fff"} />
                         {` ${cc_rating}★`}

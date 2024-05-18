@@ -4,6 +4,11 @@ import { DataGrid } from "@mui/x-data-grid";
 import './customdatagrid.css'
 
 function CustomDataGrid({rows, columns, toshow}) {
+    
+    rows.forEach((row, index)=>{
+        row.id = index+1;
+    })
+
     const hide = {zIndex: "-1", opacity: 0, position:"absolute"}
     const display = {zIndex: "100", opacity: 1}
     return (
@@ -29,13 +34,13 @@ function CustomDataGrid({rows, columns, toshow}) {
                 initialState={{
                     pagination: {
                         paginationModel: {
-                            pageSize: 100,
+                            pageSize: 50,
                         },
                     },
                 }}
                 disableRowSelectionOnClick
                 autoHeight
-                pageSizeOptions={[100]}
+                pageSizeOptions={[50]}
                 disableColumnMenu
                 disableColumnFilter
                 disableColumnSelector

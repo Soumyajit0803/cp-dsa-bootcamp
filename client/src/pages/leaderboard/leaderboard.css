@@ -39,7 +39,7 @@
     font-size: 1.5rem;
 }
 
-.id, .year, .contests, .questions, .cf_rating, .cf_best_rating {
+.id, .year, .contests, .solves, .rating, .maxrating {
     text-align: center !important;
 }
 
@@ -47,8 +47,8 @@
     color: var(--normal-text)
 }
 
-.cf_rating,
-.cf_best_rating {
+.rating,
+.maxrating {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -69,7 +69,7 @@
     font-size: 1rem;
 }
 
-.username {
+.handle {
     position: relative;
     display: flex;
 }

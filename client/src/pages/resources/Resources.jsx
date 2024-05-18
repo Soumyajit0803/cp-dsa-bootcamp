@@ -1,7 +1,7 @@
 import { React, useEffect } from "react";
 import useFetchCF from "../../hooks/useFetchCF";
 import useFetchLC from "../../hooks/useFetchLC";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import "./Resources.css";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
@@ -39,7 +39,9 @@ const LC_HANDLES = () => {
 
 const Resources = () => {
   return (
-    <div>Resources</div>
+    <div className="resources-wrapper">
+      <Typography variant="h3" sx = {{color: "var(--normal-text)"}}>Coming Soon...</Typography>
+    </div>
   )
 }
 

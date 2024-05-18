@@ -188,11 +188,13 @@
 	width: 2.5rem;
 	height: 2.5rem;
 	fill: var(--text-gradient-1);
+	/* color:var(--text-gradient-1); */
 	transition: all 0.3s ease;
 }
 
 .iconn:hover {
 	fill: #fff;
+	/* color: white; */
 	cursor: pointer
 	/* transform: scale(2) */
 }

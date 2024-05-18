@@ -5,7 +5,7 @@ import "./home.css";
 import codeiiest_gdsc from "../../assets/Codeiiest-GDSCiiest.png";
 import { Button, Box } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import { Meeting } from "../../../public/assets/svgvectors";
+import { Meeting, Sendicon } from "../../../public/assets/svgvectors";
 
 const Home = () => {
     return (
@@ -24,7 +24,7 @@ function Introduction() {
                 <div className="heading">
                     This summer,
                     <br />
-                    increase your rating
+                    boost your coding skills
                     <br />
                     <span className="gradient-text">like never before</span>
                 </div>
@@ -38,10 +38,9 @@ function Introduction() {
                             color: "white",
                             fontWeight: 600,
                             textDecoration: "none",
-                            background: "linear-gradient(150deg, var(--text-gradient-1) 50%, var(--text-gradient-2))",
                             fontSize: "1rem",
                         }}
-                        endIcon={<SendIcon />}
+                        endIcon={<Sendicon color="#fff" cls={"button-icon"}/>}
                         color="primary"
                         variant="contained"
                         href="https://forms.gle/WH9q332ETaD8ea2N8"
@@ -55,7 +54,6 @@ function Introduction() {
                             fontWeight: 600,
                             textDecoration: "none",
                             fontSize: "1rem",
-                            background: "linear-gradient(150deg, var(--text-gradient-1) 50%, var(--text-gradient-2))",
                         }}
                         endIcon={<Meeting color="#fff" cls={"button-icon"}/>}
                         variant="contained"
@@ -146,7 +144,7 @@ function About() {
                 golden opportunity to be productive and stay ahead of the curve this summer! 🌟🚀
             </div>
             <div className="presented-by">
-                <img src={codeiiest_gdsc} alt={""} srcset="" />
+                <img src={codeiiest_gdsc} alt={""} />
             </div>
         </div>
     );

@@ -11,8 +11,8 @@ import {
     ButtonGroup,
 } from "@mui/material";
 import { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import Codeiiest from "../../assets/codeiiest.png";
+// import Menuicon from "@mui/icons-material/Menu";
+import { Menuicon } from "../../../public/assets/svgvectors";
 import "./Header.css";
 
 import { Link, NavLink } from "react-router-dom";
@@ -32,8 +32,8 @@ const Menubutton = () => {
 
     return (
         <Box sx={{ paddingRight: 1 }}>
-            <IconButton onClick={handleClick}>
-                <MenuIcon sx={{ color: "white" }} />
+            <IconButton onClick={handleClick} className="icon-button" aria-label="delete" size="large">
+                <Menuicon cls={"icon-buttons"} color={"#fff"} />
             </IconButton>
             <Menu anchorEl={anchorElm} open={open} onClose={handleClose}>
                 <NavLink style={{ textDecoration: "none" }} to="/leaderboard">
@@ -66,7 +66,6 @@ const HeaderTabs = () => {
                         color: "white",
                         fontWeight: 600,
                         textDecoration: "none",
-
                     }}
                     color="inherit"
                 >
@@ -81,7 +80,6 @@ const HeaderTabs = () => {
                         backgroundColor: "inherit",
                         fontWeight: 600,
                         textDecoration: "none",
-
                     }}
                     color="inherit"
                 >
@@ -130,8 +128,7 @@ const Header = () => {
                         minHeight: "60px",
                     }}
                 >
-                    <Link style = {{textDecoration: "none", display: "flex", alignItems: "center"}} to="/">
-                        <img src={Codeiiest} alt="appIcon" style={{ width: "2.5rem", marginRight: "0.5rem" }} />
+                    <Link style={{ textDecoration: "none", display: "flex", alignItems: "center" }} to="/">
 
                         <Typography
                             variant="h5"
@@ -140,7 +137,7 @@ const Header = () => {
                                 fontWeight: 600,
                             }}
                         >
-                            {mobileView ? "Bootcamp" : "CP/DSA Bootcamp"}
+                            CP/DSA Bootcamp
                         </Typography>
                     </Link>
                 </Box>
