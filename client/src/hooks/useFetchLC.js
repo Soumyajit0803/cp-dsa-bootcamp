@@ -34,6 +34,7 @@ const getContests = async (handle) => {
 const INTERVAL = 600000;
 
 const useFetchLC = (allHandles) => {
+    console.log("Received LC handles: "+allHandles);
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

@@ -5,9 +5,17 @@ import CustomDataGrid from "../../components/customdatagrid/customdatagrid";
 import cf from "../../assets/cf.webp";
 import leetcode from "../../assets/leetcode.png";
 
+import userData from "../../../public/assets/data/data.json";
+import { useState, useEffect } from "react";
+import Loading from "../../components/loading/Loading";
+import Error from "../../components/error/Error";
+
+// import useFetchLC from "../../hooks/useFetchLC";
+import useFetchCF from "../../hooks/useFetchCF";
+
 const cfrows = [
     {
-        id: 1,
+        // id: 1,
         username: "ben",
         name: "Ben Ten",
         year: 2,
@@ -17,7 +25,7 @@ const cfrows = [
         cf_best_rating: 1400,
     },
     {
-        id: 2,
+        // id: 2,
         username: "ben",
         name: "Ben Ten",
         year: 2,
@@ -27,7 +35,7 @@ const cfrows = [
         cf_best_rating: 1400,
     },
     {
-        id: 3,
+        // id: 3,
         username: "ben",
         name: "Ben Ten",
         year: 2,
@@ -37,7 +45,7 @@ const cfrows = [
         cf_best_rating: 1400,
     },
     {
-        id: 4,
+        // id: 4,
         username: "ben",
         name: "Ben Ten",
         year: 2,
@@ -47,7 +55,7 @@ const cfrows = [
         cf_best_rating: 1400,
     },
     {
-        id: 5,
+        // id: 5,
         username: "ben",
         name: "Ben Ten",
         year: 2,
@@ -57,7 +65,7 @@ const cfrows = [
         cf_best_rating: 1400,
     },
     {
-        id: 6,
+        // id: 6,
         username: "ben",
         name: "Ben Ten",
         year: 2,
@@ -67,7 +75,7 @@ const cfrows = [
         cf_best_rating: 1400,
     },
     {
-        id: 7,
+        // id: 7,
         username: "ben",
         name: "Ben Ten",
         year: 2,
@@ -77,7 +85,7 @@ const cfrows = [
         cf_best_rating: 1400,
     },
     {
-        id: 8,
+        // id: 8,
         username: "ben",
         name: "Ben Ten",
         year: 2,
@@ -95,7 +103,7 @@ function CFTag(rating) {
         return "pupil";
     } else if (1400 <= rating && rating < 1600) {
         return "specialist";
-    } else if (1600 <= rating && rating < 1900) {
+    } else{
         return "expert";
     }
 }
@@ -149,14 +157,14 @@ const cfcolumns = [
         ),
     },
     {
-        field: "username",
+        field: "handle",
         headerName: "User Handle",
         width: 200,
         headerClassName: "lb-header",
         sortable: false,
         resizable: false,
         renderCell: (params) => (
-            <Tooltip title={<Msg msg={`${CFTag(params.row.cf_rating)} ${params.value}`} />} arrow placement="right">
+            <Tooltip title={<Msg msg={`${params.row.rank} ${params.row.name}`} />} arrow placement="right">
                 <a className="usr_name" href={`https://codeforces.com/profile/${params.value}`}>
                     {params.value}
                 </a>
@@ -176,34 +184,34 @@ const cfcolumns = [
                 params.value === 1 ? "st" : params.value === 2 ? "nd" : params.value === 3 ? "rd" : "th"
             }`,
     },
+    // {
+    //     field: "contests",
+    //     headerName: "Contests given",
+    //     width: 150,
+    //     headerClassName: "lb-header",
+    //     resizable: false,
+    //     headerAlign: "center",
+    //     renderCell: (params) => (
+    //         <Tooltip title={params.value} arrow placement="right">
+    //             {params.value}
+    //         </Tooltip>
+    //     ),
+    // },
+    // {
+    //     field: "solves",
+    //     headerName: "Qs solved",
+    //     width: 120,
+    //     headerClassName: "lb-header",
+    //     resizable: false,
+    //     headerAlign: "center",
+    //     renderCell: (params) => (
+    //         <Tooltip title={params.value} arrow placement="right">
+    //             {params.value}
+    //         </Tooltip>
+    //     ),
+    // },
     {
-        field: "contests",
-        headerName: "Contests given",
-        width: 150,
-        headerClassName: "lb-header",
-        resizable: false,
-        headerAlign: "center",
-        renderCell: (params) => (
-            <Tooltip title={params.value} arrow placement="right">
-                {params.value}
-            </Tooltip>
-        ),
-    },
-    {
-        field: "questions",
-        headerName: "Qs solved",
-        width: 120,
-        headerClassName: "lb-header",
-        resizable: false,
-        headerAlign: "center",
-        renderCell: (params) => (
-            <Tooltip title={params.value} arrow placement="right">
-                {params.value}
-            </Tooltip>
-        ),
-    },
-    {
-        field: "cf_rating",
+        field: "rating",
         headerName: "Rating",
         width: 90,
         renderCell: ratingTag,
@@ -212,7 +220,7 @@ const cfcolumns = [
         headerAlign: "center",
     },
     {
-        field: "cf_best_rating",
+        field: "maxrating",
         headerName: "Best Rating",
         width: 120,
         renderCell: ratingTag,
@@ -318,7 +326,40 @@ const lccolumns = [
 ];
 
 const Leaderboard = () => {
-    const [show, setShow] = React.useState(1);
+    const [show, setShow] = useState(1);
+    const cfUsers = {};
+
+    for (let user of userData) {
+        if (!user["Codeforce  Handle "] || !user["Leetcode Handle "]) {
+            continue;
+        }
+        if (user["Codeforce  Handle "].includes(" ") || user["Leetcode Handle "].includes(" ")) {
+            continue;
+        }
+        cfUsers[user["Codeforce  Handle "].toLowerCase()] = [user.Name, user["Year (1/2/3/4)"]];
+    }
+
+    // const { lcData, lcLoading, lcError } = useFetchLC(Object.keys(lcUsers));
+
+    const v = Object.keys(cfUsers);
+    const { data, loading, error } = useFetchCF(v);
+
+    if (loading) {
+        console.log("Fetching Data");
+        return <Loading />;
+    }
+
+    if (error) {
+        console.log("error occured.");
+        return <Error message={error.response.request.responseText} error_code={error.response.request.status} />;
+    }
+    else {
+
+        for(let user of data){
+            [user.name, user.year] = cfUsers[user.handle.toLowerCase()];
+        }
+    }
+
     return (
         <div className="lb-page">
             <div className="heading">
@@ -347,7 +388,7 @@ const Leaderboard = () => {
                 </Button>
             </ButtonGroup>
             <Box className="datagrid-wrapper">
-                <CustomDataGrid rows={cfrows} columns={cfcolumns} toshow={show} />
+                {<CustomDataGrid rows={data} columns={cfcolumns} toshow={show} />}
                 <CustomDataGrid rows={cfrows} columns={lccolumns} toshow={!show} />
             </Box>
         </div>

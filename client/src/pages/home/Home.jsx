@@ -4,7 +4,8 @@ import NameCard from "../../components/NameCard/NameCard";
 import "./home.css";
 import codeiiest_gdsc from '../../assets/Codeiiest-GDSCiiest.png'
 import {Button} from "@mui/material"
-import SendIcon from '@mui/icons-material/Send';
+import {Sendicon} from "../../../public/assets/svgvectors"
+// import SendIcon from '@mui/icons-material/Send';
 
 const Home = () => {
     return (
@@ -23,7 +24,7 @@ function Introduction() {
                 <div className="heading">
                     This summer,
                     <br />
-                    increase your rating
+                    boost your coding skills
                     <br />
                     <span className="gradient-text">like never before</span>
                 </div>
@@ -39,7 +40,7 @@ function Introduction() {
                         marginTop: "1.5rem",
                         fontSize: "1rem",          
                     }}
-                    endIcon = { <SendIcon />}
+                    endIcon = { <Sendicon cls = "icon-buttons" color={"#fff"} />}
                     color="primary"
                     variant="contained"
                 >
@@ -120,7 +121,7 @@ function About() {
                 golden opportunity to be productive and stay ahead of the curve this summer! 🌟🚀
             </div>
             <div className="presented-by">
-                <img src={codeiiest_gdsc} alt={""} srcset="" />
+                <img src={codeiiest_gdsc} alt={""} />
             </div>
         </div>
     );

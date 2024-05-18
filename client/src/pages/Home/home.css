@@ -78,6 +78,8 @@
 .home .team .teams-list {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     padding-top: 5rem;
     gap: 2rem
 }
@@ -97,7 +99,7 @@
 }
 
 .home .about .presented-by {
-    width: min(100%, 500px);
+    width: min(100%, 300px);
     margin-top: 3rem;
     margin-bottom: 3rem;
 }

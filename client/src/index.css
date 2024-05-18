@@ -14,7 +14,7 @@
     --text-gradient-1: #2586f8;
     --text-gradient-2: #25f893;
     --normal-text: #cccccc;
-    --headercolor: rgb(32, 32, 32);
+    --headercolor: rgb(41, 41, 41);
     font-family: "Roboto", sans-serif;
     color: #fff;
 }
@@ -22,4 +22,8 @@
 body {
     margin: 0;
     background-color: #0f1214;
+}
+
+.icon-buttons{
+    width: 1.8rem
 }
