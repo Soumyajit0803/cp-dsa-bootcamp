@@ -5,18 +5,21 @@
     --pupil: #31ef39;
     --specialist: #13f3f3;
     --expert: #269bfc;
+    --candidate-master: rgb(160, 73, 252);
+    --candidate-master-bg: rgba(94, 10, 231, 29%);
     --newbie-bg: rgba(150, 150, 150, 29%);
     --pupil-bg: rgba(49, 239, 57, 29%);
     --specialist-bg: rgba(19, 243, 243, 20%);
     --expert-bg: rgba(37, 134, 248, 29%);
     --text-gradient-1: #2586f8;
     --text-gradient-2: #25f893;
+    --normal-text: #cccccc;
     --headercolor: rgb(32, 32, 32);
-    --normal-text: #ffffffbb;
     font-family: "Roboto", sans-serif;
     color: #fff;
 }
 
 body {
+    margin: 0;
     background-color: #0f1214;
 }
