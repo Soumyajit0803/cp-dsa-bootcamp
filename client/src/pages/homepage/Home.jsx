@@ -2,10 +2,10 @@ import React from "react";
 import banner from "../../assets/banner.png";
 import NameCard from "../../components/NameCard/NameCard";
 import "./home.css";
-import codeiiest_gdsc from '../../assets/Codeiiest-GDSCiiest.png'
-import {Button} from "@mui/material"
-import {Sendicon} from "../../../public/assets/svgvectors"
-// import SendIcon from '@mui/icons-material/Send';
+import codeiiest_gdsc from "../../assets/Codeiiest-GDSCiiest.png";
+import { Button, Box } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
+import { Meeting, Sendicon } from "../../../public/assets/svgvectors";
 
 const Home = () => {
     return (
@@ -29,23 +29,40 @@ function Introduction() {
                     <span className="gradient-text">like never before</span>
                 </div>
                 <div className="content">
-                Unlock your potential and skyrocket your programming skills with our intensive DSA Bootcamp. Join a community of passionate learners and seasoned instructors dedicated to your success.
+                    Unlock your potential and skyrocket your contest ratings with our intensive DSA Bootcamp. Join a
+                    community of passionate learners and seasoned instructors dedicated to your success.
                 </div>
-                <Button
-                    sx={{
-                        border: "1px solid green",
-                        color: "white",
-                        fontWeight: 600,
-                        textDecoration: "none",
-                        marginTop: "1.5rem",
-                        fontSize: "1rem",          
-                    }}
-                    endIcon = { <Sendicon cls = "icon-buttons" color={"#fff"} />}
-                    color="primary"
-                    variant="contained"
-                >
-                    Register Now
-                </Button>
+                <Box className="button-group">
+                    <Button
+                        sx={{
+                            color: "white",
+                            fontWeight: 600,
+                            textDecoration: "none",
+                            fontSize: "1rem",
+                        }}
+                        endIcon={<Sendicon color="#fff" cls={"button-icon"}/>}
+                        color="primary"
+                        variant="contained"
+                        href="https://forms.gle/WH9q332ETaD8ea2N8"
+                        target="_blank"
+                    >
+                        Register Now
+                    </Button>
+                    <Button
+                        sx={{
+                            color: "white",
+                            fontWeight: 600,
+                            textDecoration: "none",
+                            fontSize: "1rem",
+                        }}
+                        endIcon={<Meeting color="#fff" cls={"button-icon"}/>}
+                        variant="contained"
+                        href="https://meet.google.com/poe-isrk-yqf"
+                        target="_blank"
+                    >
+                        Join The Bootcamp
+                    </Button>
+                </Box>
             </div>
             <div className="banner">
                 <img src={banner} alt="banner img" />
@@ -63,7 +80,9 @@ function MeetTheTeam() {
                 <span className="gradient-text">Mentors</span>
             </div>
             <div className="content">
-            Get ready ready to turbocharge your skills with our awesome mentors! With their expert guidance, you'll master Data Structures and Algorithms while having an amazing Competitive Programming experience. Get inspired, tackle challenges, and elevate your coding game to new heights!
+                Get ready ready to turbocharge your skills with our awesome mentors! With their expert guidance, you'll
+                master Data Structures and Algorithms while having an amazing Competitive Programming experience. Get
+                inspired, tackle challenges, and elevate your coding game to new heights!
             </div>
             <div className="teams-list">
                 <NameCard
@@ -74,33 +93,37 @@ function MeetTheTeam() {
                     profilepic={"/assets/profilepic/samyajit_das.jpg"}
                     cf_handle={"SD125"}
                     cc_handle={"SamyajitDas"}
+                    linkedin={"https://www.linkedin.com/in/samyajit-das/"}
                 />
                 <NameCard
                     name={"Suraj Kashyap"}
                     cf_rating={"Specialist"}
                     cc_rating={4}
-                    byline={"Python coder with a knack for problem solving CP. "}
+                    byline={"In CP, the journey is as important as the destination."}
                     profilepic={"/assets/profilepic/Suraj_Kashyap.jpeg"}
-                    cf_handle={"SD125"}
-                    cc_handle={"SamyajitDas"}
+                    cf_handle={"Surajk21"}
+                    cc_handle={"Surajk21"}
+                    linkedin={"https://www.linkedin.com/in/kashyapsuraj/"}
                 />
                 <NameCard
-                    name={"Hanzala Shariq"}
+                    name={"Hanzala Sharique"}
                     cf_rating={"Specialist"}
                     cc_rating={4}
-                    byline={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Anim"}
-                    profilepic={"/assets/profilepic/samyajit_das.jpg"}
-                    cf_handle={"SD125"}
-                    cc_handle={"SamyajitDas"}
+                    byline={"Time Limit Exceeded: A hint you're one step closer to breakthrough."}
+                    profilepic={"/assets/profilepic/Hanzala_Shariq.jpeg"}
+                    cf_handle={"BurnerAce"}
+                    cc_handle={"hanzalashariqu"}
+                    linkedin={"https://www.linkedin.com/in/hanzala-sharique-944b69286/"}
                 />
                 <NameCard
                     name={"Mohak Singh"}
                     cf_rating={"Specialist"}
                     cc_rating={3}
-                    byline={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Anim"}
+                    byline={"Intuition in coding is like a GPS without signal: A Wild Guess!"}
                     profilepic={"/assets/profilepic/Mohak_Singh.jpeg"}
-                    cf_handle={"SD125"}
-                    cc_handle={"SamyajitDas"}
+                    cf_handle={"singhmohak1604"}
+                    cc_handle={"mohak06"}
+                    linkedin={"https://www.linkedin.com/in/mohak-singh-572745252/"}
                 />
             </div>
         </div>

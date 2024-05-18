@@ -7,14 +7,11 @@
 	gap: 2rem;
 	background: rgb(0, 0, 0);
 	margin-top: 2rem;
-}
-
-.footer-wrapper .address{
 	color: var(--normal-text)
 }
 
-.footer-wrapper .address a{
-	color: #fff
+.footer-wrapper .address{
+	color: hsl(0, 0%, 60%)
 }
 
 .footer2 {
@@ -22,7 +19,6 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	color: white;
 	flex-wrap: wrap;
 }
 .footer2 .left-col {
@@ -68,14 +64,9 @@
 	height: 100%;
 	object-fit: cover;
 }
-.footer2 .left-col .logos .divider {
-	width: 2px;
-	height: 80px;
-	background-color: white;
-	margin: 0 10px;
-}
+
 .footer2 .left-col .address {
-	color: rgb(208, 208, 208, 0.75);
+	color: hsl(0, 0%, 60%);
 	font-size: 15px;
 	width: 100%;
 	margin: auto;
@@ -89,21 +80,18 @@
 }
 
 .footer2 .right-col .contacts .contact a{
-	color: white;
+	color: hsl(0, 0%, 80%);
 }
 .footer-wrapper .address a:hover,
 .footer2 .right-col .contacts .contact a:hover {
 	color: var(--text-gradient-1);
 }
 
-.footer2 .right-col-2 {
-    background-color: pink;
-}
 .footer2 .right-col .title {
 	font-size: 20px;
-    /* font-weight: 800; */
 	margin-left: 0px;
 	padding: 10px 0;
+	font-weight: 600;
 }
 .footer2 .right-col .contacts {
 	display: flex;
@@ -117,7 +105,7 @@
 }
 
 .footer2 .right-col .contacts .contact .ph-num {
-	color: rgba(255, 255, 255, 0.466);
+	color: hsl(0, 0%, 50%);
 }
 
 .footer2 .right-col .contacts .contact .ph-num .material-icons {
@@ -156,10 +144,19 @@
 	gap: 1rem;
 }
 
+.footer-wrapper .address .makers {
+	font-weight: 500;
+	color: hsl(0, 0%, 80%);
+}
+
 @media screen and (max-width: 950px) {
 	.footer2 {
 		flex-direction: column;
 		gap: 2rem
+	}
+
+	.footer-wrapper .address {
+		text-align: center;
 	}
 
 	.footer2 .left-col, .right-col, .social {
