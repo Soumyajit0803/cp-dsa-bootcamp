@@ -319,6 +319,7 @@ const lccolumns = [
 
 const Leaderboard = () => {
     const [show, setShow] = React.useState(1);
+    const width = window.innerWidth;
     return (
         <div className="lb-page">
             <div className="heading">
@@ -328,7 +329,7 @@ const Leaderboard = () => {
                 Discover the top coders, track your progress, and compete for the top spot on our dynamic competitive
                 programming leaderboard!
             </div>
-            <ButtonGroup size="large" aria-label="Large button group" className="button-group">
+            <ButtonGroup size="large" aria-label="Large button group" className="button-group" orientation={width < 340 ? "vertical":"horizontal"}>
                 <Button
                     className={"table-swap " + (show ? "active" : "")}
                     size="large"

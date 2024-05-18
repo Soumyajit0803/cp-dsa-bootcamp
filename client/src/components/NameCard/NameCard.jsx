@@ -4,7 +4,7 @@ import "./NameCard.css";
 import cf from "../../assets/cf.webp";
 import leetcode from "../../assets/leetcode.png";
 import { Leetcode, Codechef, Codeforces, Linkedin } from "../../../public/assets/svgvectors";
-import { LinkedIn } from "@mui/icons-material";
+
 function NameCard({ profilepic, name, cf_rating, cc_rating, cf_handle, cc_handle, byline }) {
     return (
         <div className="namecard">

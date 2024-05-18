@@ -1,9 +1,7 @@
 import React from "react";
 import "./Footer2.css";
 import { Link } from "react-router-dom";
-
-import CodeIIEST from "/assets/codeiiest-label.png";
-import Gdsc from "/assets/gdsc.png";
+import codeiiest_gdsc from "../../assets/Codeiiest-GDSCiiest.png"
 
 function Insta() {
     return (
@@ -105,8 +103,7 @@ const Footer2 = () => {
                 <div className="left-col">
                     <Link to="/">
                         <div className="logo">
-                            <img src={CodeIIEST} alt="" style={{ height: "70px" }} />
-                            <img src={Gdsc} alt="" style={{ height: "70px" }} />
+                            <img src={codeiiest_gdsc} alt="" style={{ height: "70px" }} />
                         </div>
                     </Link>
 
