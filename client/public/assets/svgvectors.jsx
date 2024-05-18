@@ -575,6 +575,12 @@ export function Experience({cls, color}) {
 
 export function Send({cls, color}) {
     return (
-        <svg className={cls} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="send" fill={color}><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokLinecap="round" strokLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21.66,12a2,2,0,0,1-1.14,1.81L5.87,20.75A2.08,2.08,0,0,1,5,21a2,2,0,0,1-1.82-2.82L5.46,13H11a1,1,0,0,0,0-2H5.46L3.18,5.87A2,2,0,0,1,5.86,3.25h0l14.65,6.94A2,2,0,0,1,21.66,12Z" style={{fill:color}}></path></g></svg>
+        <svg className={cls} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="send" fill={color}><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21.66,12a2,2,0,0,1-1.14,1.81L5.87,20.75A2.08,2.08,0,0,1,5,21a2,2,0,0,1-1.82-2.82L5.46,13H11a1,1,0,0,0,0-2H5.46L3.18,5.87A2,2,0,0,1,5.86,3.25h0l14.65,6.94A2,2,0,0,1,21.66,12Z" style={{fill:color}}></path></g></svg>
+    )
+}
+
+export function Meeting({cls, color}) {
+    return (
+        <svg fill={color} className={cls} height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 297 297" xmlSpace="preserve"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M0,279.399c0,5.485,4.447,9.932,9.934,9.932h277.133c5.484,0,9.934-4.446,9.934-9.932v-21.572H0V279.399z"></path> <path d="M287.066,61.511h-92.846c0.387-2.411,0.594-4.879,0.594-7.398c0-25.608-20.768-46.443-46.295-46.443 c-25.529,0-46.295,20.835-46.295,46.443c0,2.52,0.207,4.987,0.594,7.398H9.934C4.447,61.511,0,65.959,0,71.444v170.491h102.807 c0.623-28.622,21.357-42.932,45.711-42.932c24.357,0,45.092,14.31,45.717,42.932H297V71.444 C297,65.959,292.551,61.511,287.066,61.511z M148.519,22.567c17.313,0,31.399,14.15,31.399,31.545 c0,17.395-14.086,31.549-31.399,31.549c-17.312,0-31.398-14.153-31.398-31.549C117.121,36.718,131.207,22.567,148.519,22.567z M148.519,183.761c-16.83,0-30.473-13.65-30.473-30.492c0-16.838,13.643-30.489,30.473-30.489 c16.832,0,30.475,13.651,30.475,30.489C178.994,170.11,165.352,183.761,148.519,183.761z"></path> <path d="M148.519,76.614c12.359,0,22.416-10.089,22.416-22.492c0-12.399-10.057-22.486-22.416-22.486 c-12.357,0-22.414,10.087-22.414,22.486C126.105,66.525,136.162,76.614,148.519,76.614z M147.529,37.646 c0.617,1.434,0.971,3.012,0.971,4.674c0,6.526-5.277,11.813-11.772,11.813c-1.641,0-3.195-0.345-4.615-0.951 C132.586,44.837,139.23,38.144,147.529,37.646z"></path> </g> </g></svg>
     )
 }

@@ -187,8 +187,8 @@ const Footer2 = () => {
                 </div>
             </div>
             <div className="address">
-                Made with <span style={{color: "white"}}>💙</span> by <a href="https://abhijit-karmakar.vercel.app/">Abhijit Karmakar</a> and {" "}
-                <a href="https://soumyajit-dev.vercel.app/">Soumyajit Karmakar</a>
+                Made with <span style={{color: "white"}}>💙</span> by <a className="makers" href="https://abhijit-karmakar.vercel.app/">Abhijit Karmakar</a> and {" "}
+                <a href="https://soumyajit-dev.vercel.app/" className="makers">Soumyajit Karmakar</a>
             </div>
         </div>
     );

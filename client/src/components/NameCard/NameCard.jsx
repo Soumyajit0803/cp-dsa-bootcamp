@@ -5,7 +5,7 @@ import cf from "../../assets/cf.webp";
 import leetcode from "../../assets/leetcode.png";
 import { Leetcode, Codechef, Codeforces, Linkedin } from "../../../public/assets/svgvectors";
 
-function NameCard({ profilepic, name, cf_rating, cc_rating, cf_handle, cc_handle, byline }) {
+function NameCard({ profilepic, name, cf_rating, cc_rating, cf_handle, cc_handle, byline, linkedin }) {
     return (
         <div className="namecard">
             <div className="profilepic">
@@ -28,7 +28,7 @@ function NameCard({ profilepic, name, cf_rating, cc_rating, cf_handle, cc_handle
             </div>
             <div className="byline">{byline}</div>
             <div className="cp-profile">
-                <IconButton className="icon-button" aria-label="delete" size="large">
+                <IconButton className="icon-button" aria-label="delete" size="large" href={linkedin} target="_blank">
                     <Linkedin cls={"cf-iconbutton"} color={"#9f9f9f"} />
                 </IconButton>
             </div>

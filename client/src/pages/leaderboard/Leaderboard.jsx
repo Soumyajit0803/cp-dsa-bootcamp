@@ -14,7 +14,7 @@ const cfrows = [
         contests: 25,
         questions: 120,
         cf_rating: 1400,
-        cf_best_rating: 1400,
+        cf_best_rating: 1100,
     },
     {
         id: 2,
@@ -23,8 +23,8 @@ const cfrows = [
         year: 2,
         contests: 25,
         questions: 120,
-        cf_rating: 1400,
-        cf_best_rating: 1400,
+        cf_rating: 1600,
+        cf_best_rating: 1200,
     },
     {
         id: 3,
@@ -44,7 +44,7 @@ const cfrows = [
         contests: 25,
         questions: 120,
         cf_rating: 1400,
-        cf_best_rating: 1400,
+        cf_best_rating: 1600,
     },
     {
         id: 5,
@@ -54,7 +54,7 @@ const cfrows = [
         contests: 25,
         questions: 120,
         cf_rating: 1400,
-        cf_best_rating: 1400,
+        cf_best_rating: 1900,
     },
     {
         id: 6,
@@ -64,7 +64,7 @@ const cfrows = [
         contests: 25,
         questions: 120,
         cf_rating: 1400,
-        cf_best_rating: 1400,
+        cf_best_rating: 2100,
     },
     {
         id: 7,
@@ -74,7 +74,7 @@ const cfrows = [
         contests: 25,
         questions: 120,
         cf_rating: 1400,
-        cf_best_rating: 1400,
+        cf_best_rating: 2400,
     },
     {
         id: 8,
@@ -84,7 +84,7 @@ const cfrows = [
         contests: 25,
         questions: 120,
         cf_rating: 1400,
-        cf_best_rating: 1400,
+        cf_best_rating: 2600,
     },
 ];
 
@@ -97,6 +97,12 @@ function CFTag(rating) {
         return "specialist";
     } else if (1600 <= rating && rating < 1900) {
         return "expert";
+    } else if (1900 <= rating && rating < 2100) {
+        return "candidate-master"
+    } else if (2100 <= rating && rating < 2400) {
+        return "master"
+    } else {
+        return "grandmaster"
     }
 }
 
@@ -329,7 +335,7 @@ const Leaderboard = () => {
                 Discover the top coders, track your progress, and compete for the top spot on our dynamic competitive
                 programming leaderboard!
             </div>
-            <ButtonGroup size="large" aria-label="Large button group" className="button-group" orientation={width < 340 ? "vertical":"horizontal"}>
+            <ButtonGroup size="large" aria-label="coding website" className="button-group" orientation={width < 340 ? "vertical":"horizontal"}>
                 <Button
                     className={"table-swap " + (show ? "active" : "")}
                     size="large"

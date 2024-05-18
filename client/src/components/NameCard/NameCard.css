@@ -39,10 +39,8 @@
     align-items: center;
     gap: 0.3rem
 }
-.pupil {
-    background-color: var(--pupil-bg);
-    color: var(--pupil);
-    border: 1.5px solid var(--pupil);
+
+.newbie, .pupil, .specialist, .candidate-master, .master, .grandmaster, .expert, .cc-1, .cc-2, .cc-3, .cc-4, .cc-5, .cc-6, .cc-7 {
     padding: 0.3rem 0.5rem 0.3rem 0.5rem;
     border-radius: 5px;
     font-size: 1.2rem;
@@ -51,54 +49,41 @@
     justify-content: center;
     align-items: center;
 }
-.newbie {
+.pupil, .cc-2 {
+    background-color: var(--pupil-bg);
+    color: var(--pupil);
+    border: 1.5px solid var(--pupil);
+}
+.newbie, .cc-1 {
     background-color: var(--newbie-bg);
     color: var(--newbie);
     border: 1.5px solid var(--newbie);
-    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .specialist {
     background-color: var(--specialist-bg);
     color: var(--specialist);
     border: 1.5px solid var(--specialist);
-    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .expert, .cc-3 {
     background-color: var(--expert-bg);
     color: var(--expert);
     border: 1.5px solid var(--expert);
-    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .candidate-master, .cc-4 {
     background-color: var(--candidate-master-bg);
     color: var(--candidate-master);
     border: 1.5px solid var(--candidate-master);
-    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+.master, .cc-5 {
+    background-color: var(--master-bg);
+    color: var(--master);
+    border: 1.5px solid var(--master);
+}
+.grandmaster, .cc-6, .cc-7 {
+    background-color: var(--grandmaster-bg);
+    color: var(--grandmaster);
+    border: 1.5px solid var(--grandmaster);
 }
 
 .namecard .byline {

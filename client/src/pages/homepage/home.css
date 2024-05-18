@@ -108,6 +108,20 @@
     flex-wrap: wrap;
 }
 
+.intro .info .button-group {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.button-icon {
+    height: 1em;
+    width: 1em;
+}
+
 @media only screen and (max-width: 800px){
     .intro .banner{
         display: none
@@ -119,6 +133,10 @@
         justify-content: center;
         flex-direction: column;
         width: 100%
+    }
+
+    .intro .info .button-group {
+        justify-content: center;
     }
 
     .intro .info .content{
