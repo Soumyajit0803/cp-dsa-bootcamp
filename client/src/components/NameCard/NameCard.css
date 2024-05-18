@@ -130,11 +130,3 @@
 .namecard .flexing a {
     text-decoration: none;
 }
-
-.namecard .flexing * {
-    transition: all 0.2s ease-in
-}
-
-.namecard .flexing :hover {
-    box-shadow: 0 0 8px 2px #373737;
-}

@@ -347,7 +347,7 @@ const Leaderboard = () => {
                     LeetCode
                 </Button>
             </ButtonGroup>
-            <Box sx={{position: "relative"}}>
+            <Box sx={{position: "relative"}} className="datagrid-wrapper">
                 <CustomDataGrid rows={cfrows} columns={cfcolumns} toshow={show} />
                 <CustomDataGrid rows={cfrows} columns={lccolumns} toshow={!show} />
             </Box>
