@@ -4,7 +4,6 @@ import NameCard from "../../components/NameCard/NameCard";
 import "./home.css";
 import codeiiest_gdsc from "../../assets/Codeiiest-GDSCiiest.png";
 import { Button, Box } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
 import { Meeting, Sendicon } from "../../../public/assets/svgvectors";
 
 const Home = () => {
