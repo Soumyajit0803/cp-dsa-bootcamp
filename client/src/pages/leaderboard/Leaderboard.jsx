@@ -13,89 +13,6 @@ import Error from "../../components/error/Error";
 // import useFetchLC from "../../hooks/useFetchLC";
 import useFetchCF from "../../hooks/useFetchCF";
 
-const cfrows = [
-    {
-        // id: 1,
-        username: "ben",
-        name: "Ben Ten",
-        year: 2,
-        contests: 25,
-        questions: 120,
-        cf_rating: 1400,
-        cf_best_rating: 1100,
-    },
-    {
-        // id: 2,
-        username: "ben",
-        name: "Ben Ten",
-        year: 2,
-        contests: 25,
-        questions: 120,
-        cf_rating: 1600,
-        cf_best_rating: 1200,
-    },
-    {
-        // id: 3,
-        username: "ben",
-        name: "Ben Ten",
-        year: 2,
-        contests: 25,
-        questions: 120,
-        cf_rating: 1400,
-        cf_best_rating: 1400,
-    },
-    {
-        // id: 4,
-        username: "ben",
-        name: "Ben Ten",
-        year: 2,
-        contests: 25,
-        questions: 120,
-        cf_rating: 1400,
-        cf_best_rating: 1600,
-    },
-    {
-        // id: 5,
-        username: "ben",
-        name: "Ben Ten",
-        year: 2,
-        contests: 25,
-        questions: 120,
-        cf_rating: 1400,
-        cf_best_rating: 1900,
-    },
-    {
-        // id: 6,
-        username: "ben",
-        name: "Ben Ten",
-        year: 2,
-        contests: 25,
-        questions: 120,
-        cf_rating: 1400,
-        cf_best_rating: 2100,
-    },
-    {
-        // id: 7,
-        username: "ben",
-        name: "Ben Ten",
-        year: 2,
-        contests: 25,
-        questions: 120,
-        cf_rating: 1400,
-        cf_best_rating: 2400,
-    },
-    {
-        // id: 8,
-        username: "ben",
-        name: "Ben Ten",
-        year: 2,
-        contests: 25,
-        questions: 120,
-        cf_rating: 1400,
-        cf_best_rating: 2600,
-    },
-];
-
 function CFTag(rating) {
     if (rating < 1200) {
         return "newbie";
@@ -398,7 +315,7 @@ const Leaderboard = () => {
             </ButtonGroup>
             <Box className="datagrid-wrapper">
                 {<CustomDataGrid rows={data} columns={cfcolumns} toshow={show} />}
-                <CustomDataGrid rows={cfrows} columns={lccolumns} toshow={!show} />
+                {/* <CustomDataGrid rows={cfrows} columns={lccolumns} toshow={!show} /> */}
             </Box>
         </div>
     );
