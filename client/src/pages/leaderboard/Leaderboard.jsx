@@ -329,6 +329,9 @@ const Leaderboard = () => {
     const [show, setShow] = useState(1);
     const cfUsers = {};
 
+    const width = window.innerWidth;
+
+
     for (let user of userData) {
         if (!user["Codeforce  Handle "] || !user["Leetcode Handle "]) {
             continue;
@@ -369,7 +372,7 @@ const Leaderboard = () => {
                 Discover the top coders, track your progress, and compete for the top spot on our dynamic competitive
                 programming leaderboard!
             </div>
-            <ButtonGroup size="large" aria-label="Large button group" className="button-group">
+            <ButtonGroup size="large" aria-label="Large button group" className="button-group" orientation={width < 340 ? "vertical":"horizontal"}>
                 <Button
                     className={"table-swap " + (show ? "active" : "")}
                     size="large"
@@ -378,14 +381,14 @@ const Leaderboard = () => {
                 >
                     Codeforces
                 </Button>
-                <Button
+                {/* <Button
                     className={"table-swap " + (!show ? "active" : "")}
                     size="large"
                     onClick={() => setShow(0)}
                     endIcon={<img src={leetcode} className="cf-img" />}
                 >
                     LeetCode
-                </Button>
+                </Button> */}
             </ButtonGroup>
             <Box className="datagrid-wrapper">
                 {<CustomDataGrid rows={data} columns={cfcolumns} toshow={show} />}

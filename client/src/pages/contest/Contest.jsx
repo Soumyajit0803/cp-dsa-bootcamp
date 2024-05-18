@@ -6,7 +6,7 @@ const Contest = () => {
   return (
     <div className="contest-wrapper">
       <Typography variant='h3' sx = {{color: "var(--normal-text)"}}>
-        Coming soon
+        Coming Soon...
       </Typography>
     </div>
   )

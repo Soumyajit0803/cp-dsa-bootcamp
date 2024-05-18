@@ -9,8 +9,6 @@ function CustomDataGrid({rows, columns, toshow}) {
         row.id = index+1;
     })
 
-    console.log(rows);
-
     const hide = {zIndex: "-1", opacity: 0, position:"absolute"}
     const display = {zIndex: "100", opacity: 1}
     return (
@@ -36,13 +34,13 @@ function CustomDataGrid({rows, columns, toshow}) {
                 initialState={{
                     pagination: {
                         paginationModel: {
-                            pageSize: 100,
+                            pageSize: 50,
                         },
                     },
                 }}
                 disableRowSelectionOnClick
                 autoHeight
-                pageSizeOptions={[100]}
+                pageSizeOptions={[50]}
                 disableColumnMenu
                 disableColumnFilter
                 disableColumnSelector

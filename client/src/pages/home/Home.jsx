@@ -71,7 +71,7 @@ function MeetTheTeam() {
                     cf_rating={"Expert"}
                     cc_rating={4}
                     byline={"Solving problems faster than you can say 'syntax error'"}
-                    profilepic={"./assets/profilepic/samyajit_das.jpg"}
+                    profilepic={"/assets/profilepic/samyajit_das.jpg"}
                     cf_handle={"SD125"}
                     cc_handle={"SamyajitDas"}
                 />
@@ -80,7 +80,7 @@ function MeetTheTeam() {
                     cf_rating={"Specialist"}
                     cc_rating={4}
                     byline={"Python coder with a knack for problem solving CP. "}
-                    profilepic={"../../public/assets/profilepic/Suraj_Kashyap.jpeg"}
+                    profilepic={"/assets/profilepic/Suraj_Kashyap.jpeg"}
                     cf_handle={"SD125"}
                     cc_handle={"SamyajitDas"}
                 />
@@ -89,7 +89,7 @@ function MeetTheTeam() {
                     cf_rating={"Specialist"}
                     cc_rating={4}
                     byline={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Anim"}
-                    profilepic={"../../public/assets/profilepic/samyajit_das.jpg"}
+                    profilepic={"/assets/profilepic/samyajit_das.jpg"}
                     cf_handle={"SD125"}
                     cc_handle={"SamyajitDas"}
                 />
@@ -98,7 +98,7 @@ function MeetTheTeam() {
                     cf_rating={"Specialist"}
                     cc_rating={3}
                     byline={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Anim"}
-                    profilepic={"../../public/assets/profilepic/Mohak_Singh.jpeg"}
+                    profilepic={"/assets/profilepic/Mohak_Singh.jpeg"}
                     cf_handle={"SD125"}
                     cc_handle={"SamyajitDas"}
                 />

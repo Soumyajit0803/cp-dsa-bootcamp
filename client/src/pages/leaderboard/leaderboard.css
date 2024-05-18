@@ -4,7 +4,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1rem
+    gap: 1rem;
+    padding: 2rem;
 }
 
 .lb-page .leaderboard p,
@@ -19,6 +20,7 @@
 .lb-page .heading {
     font-size: 3.5rem;
     font-weight: 600;
+    text-align: center;
 }
 
 .lb-page .content {
@@ -126,4 +128,6 @@
 
 .lb-page .datagrid-wrapper {
     position: relative;
+    width: 100%;
+    max-width: min-content;
 }
