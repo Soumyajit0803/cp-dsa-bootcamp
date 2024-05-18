@@ -1,5 +1,6 @@
 .home {
     margin-top: 4rem;
+    padding: 2rem;
 }
 
 .intro {
@@ -27,10 +28,16 @@
 }
 
 .intro .info .heading,
-.team .heading {
+.home .team .heading,
+.home .about .heading {
     font-size: 3rem;
     font-weight: 600;
     text-align: left;
+}
+
+.home .team .heading,
+.home .about .heading {
+    text-align: center;
 }
 
 .gradient-text {
@@ -41,22 +48,57 @@
     color: transparent;
 }
 
-.intro .info .content {
+.intro .info .content,
+.home .about .content,
+.home .team .content {
     padding-top: 1rem;
     font-size: 1.2rem;
-    font-weight: 300;
+    font-weight: 400;
     text-align: left;
     line-height: 1.4em;
     color: var(--normal-text);
 }
 
-.team {
+.home .team {
     margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.team .teams-list {
+.home .about .content,
+.home .team .content {
+    font-weight: 400;
+}
+
+.home .team .teams-list {
     display: flex;
     align-items: center;
     padding-top: 5rem;
     gap: 2rem
+}
+
+.home .about {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home .about .content,
+.home .team .content {
+    width: min(75ch, 100%);
+    text-align: center;
+}
+
+.home .about .presented-by {
+    width: min(100%, 500px);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.home .about .presented-by img {
+    width: 100%;
 }

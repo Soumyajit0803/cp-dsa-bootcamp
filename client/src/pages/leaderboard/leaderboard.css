@@ -1,0 +1,125 @@
+.lb-page {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem
+}
+
+.lb-page .leaderboard p,
+.lb-page .leaderboard svg {
+    color: #fff !important;
+}
+
+.lb-page .leaderboard {
+    width: max-content;
+}
+
+.lb-page .heading {
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+.lb-page .content {
+    width: min(40ch, 100%);
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.4em;
+    color: var(--normal-text);
+}
+
+.lc, .cf {
+    padding: 0.6rem;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.id, .year, .contests, .questions, .cf_rating, .cf_best_rating {
+    text-align: center !important;
+}
+
+.year {
+    color: var(--normal-text)
+}
+
+.cf_rating,
+.cf_best_rating {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.lb {
+    height: 35px !important;
+    font-size: 1rem;
+}
+
+.leaderboard .lb-header {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    background-color: #333b41;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.username {
+    position: relative;
+    display: flex;
+}
+
+.name {
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 10000;
+    background-color: green;
+    padding: 0.4rem;
+    top: 20px;
+}
+
+.usr_name {
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+
+.lb-page .button-group .table-swap {
+    color: var(--text-gradient-2);
+    border: 1.5px solid rgb(14, 133, 231);
+}
+.lb-page .button-group .active {
+    background-color: rgba(14, 133, 231, 0.23);
+}
+
+/* tooltip css */
+.q-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.q-stats .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.q-stats .row .easy {
+    color: #00b8a3;
+}
+.q-stats .row .med {
+    color: #FFC01E;
+}
+.q-stats .row .hard {
+    color: #FF375F;
+}

@@ -32,6 +32,12 @@
     margin-bottom: 0.6rem;
 }
 
+.namecard .flexing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem
+}
 .pupil {
     background-color: var(--pupil-bg);
     color: var(--pupil);
@@ -40,6 +46,9 @@
     border-radius: 5px;
     font-size: 1.2rem;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .newbie {
     background-color: var(--newbie-bg);
@@ -49,6 +58,9 @@
     border-radius: 5px;
     font-size: 1.2rem;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .specialist {
     background-color: var(--specialist-bg);
@@ -58,8 +70,11 @@
     border-radius: 5px;
     font-size: 1.2rem;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.expert {
+.expert, .cc-3 {
     background-color: var(--expert-bg);
     color: var(--expert);
     border: 1.5px solid var(--expert);
@@ -67,6 +82,22 @@
     border-radius: 5px;
     font-size: 1.2rem;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.candidate-master, .cc-4 {
+    background-color: var(--candidate-master-bg);
+    color: var(--candidate-master);
+    border: 1.5px solid var(--candidate-master);
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .namecard .byline {
@@ -74,4 +105,36 @@
     text-align: center;
     color: #ffffff92;
     padding: 1rem;
+}
+
+.namecard .cp-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%
+}
+
+.namecard .cp-profile .icon-button:hover {
+    background-color: #303b43;
+}
+
+.cf-img {
+    height: 1em;
+    margin-right: 5px;
+}
+
+.cf-iconbutton {
+    height: 0.8em;
+}
+
+.namecard .flexing a {
+    text-decoration: none;
+}
+
+.namecard .flexing * {
+    transition: all 0.2s ease-in
+}
+
+.namecard .flexing :hover {
+    box-shadow: 0 0 8px 2px #373737;
 }

@@ -1,0 +1,15 @@
+.row {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.leaderboard {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.MuiSelect-select {
+    color: #fff !important; 
+}

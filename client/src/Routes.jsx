@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
-import Home from "./pages/home/Home";
+import Home from "./pages/home/home";
 import Leaderboard from "./pages/leaderboard/Leaderboard";
 import Contest from "./pages/contest/Contest";
 import Resources from "./pages/resources/Resources";
