@@ -58,7 +58,7 @@ const Menubutton = () => {
 
 const HeaderTabs = () => {
     return (
-        <ButtonGroup sx={{ textDecoration: "none" }}>
+        <ButtonGroup sx={{ textDecoration: "none", marginRight: 1 }}>
             <NavLink className="navlink" to="/leaderboard">
                 <Button
                     sx={{
@@ -66,6 +66,7 @@ const HeaderTabs = () => {
                         color: "white",
                         fontWeight: 600,
                         textDecoration: "none",
+
                     }}
                     color="inherit"
                 >
@@ -80,6 +81,7 @@ const HeaderTabs = () => {
                         backgroundColor: "inherit",
                         fontWeight: 600,
                         textDecoration: "none",
+
                     }}
                     color="inherit"
                 >
@@ -93,7 +95,6 @@ const HeaderTabs = () => {
                         color: "white",
                         backgroundColor: "none",
                         fontWeight: 600,
-
                         textDecoration: "none",
                     }}
                     color="inherit"
@@ -126,7 +127,7 @@ const Header = () => {
                         display: "flex",
                         alignItems: "center",
                         paddingLeft: 2,
-                        minHeight: "50px",
+                        minHeight: "60px",
                     }}
                 >
                     <Link style = {{textDecoration: "none", display: "flex", alignItems: "center"}} to="/">

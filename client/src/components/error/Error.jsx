@@ -17,7 +17,6 @@ const Error = ({ message, error_code }) => {
 Error.propTypes = {
     message: PropTypes.string.isRequired,
     error_code: PropTypes.number.isRequired,
-    status: PropTypes.string.isRequired,
 };
 
 export default Error;

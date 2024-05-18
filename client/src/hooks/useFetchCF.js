@@ -2,38 +2,38 @@
 import { useState, useEffect } from "react";
 import { fetchData } from "../api/apiservice";
 
-const getContests = async(handles)=>{
-    const contests = (handle)=> `https://codeforces.com/api/user.rating?handle=${handle}`
+const getContests = async (handles) => {
+    const contests = (handle) => `https://codeforces.com/api/user.rating?handle=${handle}`;
     var prunedResult = {};
-    for(let handle of handles){
+    for (let handle of handles) {
         const result = await fetchData(contests(handle));
-        prunedResult[handle] = result.result.length
+        prunedResult[handle] = result.result.length;
     }
     return prunedResult;
-}
+};
 
-const Count = (sub)=>{
+const Count = (sub) => {
     const solves = new Set();
-    var size = 0
+    var size = 0;
 
-    sub.forEach((submission)=>{
-        if(submission.verdict==="OK" && !solves.has(submission.problem.name)){
-        solves.add(submission.problem.name)
-        size+=1
+    sub.forEach((submission) => {
+        if (submission.verdict === "OK" && !solves.has(submission.problem.name)) {
+            solves.add(submission.problem.name);
+            size += 1;
         }
-    })
-    return size
-}
+    });
+    return size;
+};
 
-const getSolves = async(handles)=>{
-    const problems = (handle)=> `https://codeforces.com/api/user.status?handle=${handle}`
+const getSolves = async (handles) => {
+    const problems = (handle) => `https://codeforces.com/api/user.status?handle=${handle}`;
     var prunedResult = {};
-    for(let handle of handles){
+    for (let handle of handles) {
         const result = await fetchData(problems(handle));
-        prunedResult[handle] = Count(result.result)
+        prunedResult[handle] = Count(result.result);
     }
     return prunedResult;
-}
+};
 
 const getBasic = async (handles) => {
     var h = "";
@@ -56,61 +56,63 @@ const getBasic = async (handles) => {
     return prunedResult;
 };
 
+const INTERVAL = 1000;
+
 const useFetchCF = (endpoint) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const lastLoadCF = parseInt(localStorage.getItem("CFload"));
+    const cacheAvailable = lastLoadCF !== null;
+    console.log("Last loading attempt at: " + lastLoadCF);
+
+    const currLoad = new Date().getTime();
+
     useEffect(() => {
-        const getData = async () => {
-            try {
-                // const solves = await getSolves(endpoint);
-                // const contests = await getContests(endpoint);
-                // const basic = await getBasic(endpoint)
-                // for(let user of basic){
-                //     user['solves'] = solves[user.handle];
-                //     user['contests'] = contests[user.handle];
-                // }
+        if (lastLoadCF + INTERVAL > currLoad && cacheAvailable) {
+            const cache = localStorage.getItem("CFdata");
+            setData(JSON.parse(cache));
+            console.log("Too many requests. Data cached");
+            setLoading(false);
 
-                const basic = [
-                    {
-                      "maxrating": 1217,
-                      "rating": 1217,
-                      "maxrank": "pupil",
-                      "rank": "pupil",
-                      "handle": "CF_Soumyajit",
-                      "solves": 214,
-                      "contests": 27
-                    },
-                    {
-                      "maxrating": 1017,
-                      "rating": 1217,
-                      "maxrank": "pupil",
-                      "rank": "pupil",
-                      "handle": "CF_Soumyajit",
-                      "solves": 214,
-                      "contests": 27
-                    },
-                    {
-                      "maxrating": 1631,
-                      "rating": 1631,
-                      "maxrank": "expert",
-                      "rank": "expert",
-                      "handle": "SD125",
-                      "solves": 74,
-                      "contests": 9
+        } else {
+            const getData = async () => {
+                try {
+                    const solves = await getSolves(endpoint);
+                    const contests = await getContests(endpoint);
+                    const basic = await getBasic(endpoint);
+
+                    // for (let user of basic) {
+                    //     user["solves"] = solves[user.handle];
+                    //     user["contests"] = contests[user.handle];
+                    // }
+
+                    basic.forEach((user)=>{
+                        user['solves'] = solves[user.handle];
+                        user["contests"] = contests[user.handle];
+                    });
+
+                    const basicData = basic.sort((a, b) => -a.maxrating + b.maxrating)
+                    setData(basicData);
+
+                    localStorage.setItem("CFdata", JSON.stringify(basicData));
+                    localStorage.setItem("CFload", JSON.stringify(currLoad));
+                } catch (err) {
+                    if (!cacheAvailable) {
+                        setError(err);
+                    } else {
+                        const cache = localStorage.getItem("CFdata");
+                        setData(JSON.parse(cache));
+                        console.log(err);
+                        console.log("Error in fetching. Data cached");
                     }
-                  ]
-
-                setData(basic.sort((a,b)=>a.maxrating - b.maxrating));
-            } catch (err) {
-                setError(err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        getData();
+                } finally {
+                    setLoading(false);
+                }
+            };
+            getData();
+        }
     }, []);
 
     return { data, loading, error };
