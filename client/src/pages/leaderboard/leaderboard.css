@@ -123,3 +123,7 @@
 .q-stats .row .hard {
     color: #FF375F;
 }
+
+.lb-page .datagrid-wrapper {
+    position: relative;
+}

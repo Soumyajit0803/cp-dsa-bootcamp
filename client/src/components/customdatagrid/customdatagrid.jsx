@@ -4,8 +4,8 @@ import { DataGrid } from "@mui/x-data-grid";
 import './customdatagrid.css'
 
 function CustomDataGrid({rows, columns, toshow}) {
-    const hide = {zIndex: "-1", opacity: 0}
-    const display = {zIndex: "1", opacity: 1}
+    const hide = {zIndex: "-1", opacity: 0, position:"absolute"}
+    const display = {zIndex: "100", opacity: 1}
     return (
         <Box className="leaderboard" sx = {toshow ? display : hide} >
             <DataGrid

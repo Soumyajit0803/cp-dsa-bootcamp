@@ -318,7 +318,6 @@ const lccolumns = [
 ];
 
 const Leaderboard = () => {
-    var [mainrows, maincols] = [[], []];
     const [show, setShow] = React.useState(1);
     return (
         <div className="lb-page">
@@ -347,7 +346,7 @@ const Leaderboard = () => {
                     LeetCode
                 </Button>
             </ButtonGroup>
-            <Box sx={{position: "relative"}} className="datagrid-wrapper">
+            <Box className="datagrid-wrapper">
                 <CustomDataGrid rows={cfrows} columns={cfcolumns} toshow={show} />
                 <CustomDataGrid rows={cfrows} columns={lccolumns} toshow={!show} />
             </Box>

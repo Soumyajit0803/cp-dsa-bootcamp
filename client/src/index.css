@@ -14,6 +14,7 @@
     --text-gradient-1: #2586f8;
     --text-gradient-2: #25f893;
     --normal-text: #cccccc;
+    --headercolor: rgb(32, 32, 32);
     font-family: "Roboto", sans-serif;
     color: #fff;
 }

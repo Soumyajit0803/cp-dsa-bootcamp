@@ -1,0 +1,24 @@
+[
+    {
+        "contestAttend": 4,
+        "contestRating": 1791.5583969783086,
+        "contestTopPercentage": 7.91,
+        "maxRating": 1791.558,
+        "solvedProblem": 195,
+        "easySolved": 54,
+        "mediumSolved": 101,
+        "hardSolved": 40,
+        "handle": "SamyajitDas"
+    },
+    {
+        "contestAttend": 13,
+        "contestRating": 1713.8957479202252,
+        "contestTopPercentage": 11.83,
+        "maxRating": 1713.896,
+        "solvedProblem": 442,
+        "easySolved": 150,
+        "mediumSolved": 250,
+        "hardSolved": 42,
+        "handle": "__Abhijit__"
+    }
+]
