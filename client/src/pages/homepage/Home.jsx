@@ -56,10 +56,10 @@ function Introduction() {
                         }}
                         endIcon={<Meeting color="#fff" cls={"button-icon"}/>}
                         variant="contained"
-                        href="https://meet.google.com/poe-isrk-yqf"
+                        href="https://chat.whatsapp.com/GjffQq9LHdw8oLxfYqtJlM"
                         target="_blank"
                     >
-                        Join The Bootcamp
+                        Join Whatsapp Group
                     </Button>
                 </Box>
             </div>
