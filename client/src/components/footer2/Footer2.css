@@ -149,6 +149,25 @@
 	color: hsl(0, 0%, 80%);
 }
 
+
+.footer2 .right-col {
+	max-width: 624px
+}
+
+.iconn {
+	width: 2.5rem;
+	height: 2.5rem;
+	fill: var(--text-gradient-1);
+	/* color:var(--text-gradient-1); */
+	transition: all 0.3s ease;
+}
+
+.iconn:hover {
+	fill: #fff;
+	/* color: white; */
+	cursor: pointer
+	/* transform: scale(2) */
+}
 @media screen and (max-width: 950px) {
 	.footer2 {
 		flex-direction: column;
@@ -156,7 +175,7 @@
 	}
 
 	.footer-wrapper .address {
-		text-align: center;
+		/* text-align: center; */
 	}
 
 	.footer2 .left-col, .right-col, .social {
@@ -178,23 +197,4 @@
 		justify-content: center;
 		gap: 2rem
 	}
-}
-
-.footer2 .right-col {
-	max-width: 624px
-}
-
-.iconn {
-	width: 2.5rem;
-	height: 2.5rem;
-	fill: var(--text-gradient-1);
-	/* color:var(--text-gradient-1); */
-	transition: all 0.3s ease;
-}
-
-.iconn:hover {
-	fill: #fff;
-	/* color: white; */
-	cursor: pointer
-	/* transform: scale(2) */
 }

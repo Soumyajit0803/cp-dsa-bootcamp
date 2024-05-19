@@ -136,7 +136,7 @@ const cfcolumns = [
     {
         field: "rating",
         headerName: "Rating",
-        width: 90,
+        width: 120,
         renderCell: ratingTag,
         headerClassName: "lb-header",
         resizable: false,
@@ -145,7 +145,7 @@ const cfcolumns = [
     {
         field: "maxrating",
         headerName: "Best Rating",
-        width: 120,
+        width: 150,
         renderCell: ratingTag,
         headerClassName: "lb-header",
         resizable: false,

@@ -117,28 +117,28 @@ const Footer2 = () => {
                                 <div className="name">Ankita Tripathi</div>
                             </a>
 
-                            <div className="ph-num">Presentation</div>
+                            <div className="ph-num">Backend</div>
                         </div>
                         <div className="contact">
                             <a href="#">
                                 <div className="name">Satyam Yadav</div>
                             </a>
 
-                            <div className="ph-num">Presentation</div>
+                            <div className="ph-num">Coordinator</div>
                         </div>
                         <div className="contact">
                             <a href="#">
                                 <div className="name">Shreyansh Srivastava</div>
                             </a>
 
-                            <div className="ph-num">Presentation</div>
+                            <div className="ph-num">Coordinator</div>
                         </div>
                         <div className="contact">
                             <a href="#">
                                 <div className="name">Anurag Chaurasia</div>
                             </a>
 
-                            <div className="ph-num">Presentation</div>
+                            <div className="ph-num">Backend</div>
                         </div>
                         <div className="contact">
                             <a href="#">
@@ -151,7 +151,7 @@ const Footer2 = () => {
                         </div>
                         <div className="contact">
                             <a href="#">
-                                <div className="name">Rohit</div>
+                                <div className="name">Rohit Rahul Dey</div>
                             </a>
 
                             <a href="#">
@@ -163,7 +163,7 @@ const Footer2 = () => {
                                 <div className="name">Sakshi</div>
                             </a>
 
-                            <div className="ph-num">Poster design</div>
+                            <div className="ph-num">Graphic designing</div>
                         </div>
                     </div>
                 </div>
