@@ -47,7 +47,7 @@ function Introduction() {
                     >
                         Register Now
                     </Button>
-                    <Button
+                    {/* <Button
                         sx={{
                             color: "white",
                             fontWeight: 600,
@@ -60,7 +60,7 @@ function Introduction() {
                         target="_blank"
                     >
                         Join Whatsapp Group
-                    </Button>
+                    </Button> */}
                 </Box>
             </div>
             <div className="banner">

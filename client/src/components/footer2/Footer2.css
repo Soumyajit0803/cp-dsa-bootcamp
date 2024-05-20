@@ -174,8 +174,8 @@
 		gap: 2rem
 	}
 
-	.footer-wrapper .address {
-		/* text-align: center; */
+	.footer-wrapper > .address {
+		text-align: center;
 	}
 
 	.footer2 .left-col, .right-col, .social {

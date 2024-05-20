@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import './customdatagrid.css'
+import { useEffect } from "react";
 
 function CustomDataGrid({rows, columns, toshow}) {
     
@@ -49,7 +50,8 @@ function CustomDataGrid({rows, columns, toshow}) {
                     return "row";
                 }}
                 getCellClassName={(params) => {
-                    return params.field;
+                    if (params.field && params.field.length <= 1 && params.field !== "id") {return "q-solve-status"}
+                    return params.field
                 }}
             />
         </Box>
