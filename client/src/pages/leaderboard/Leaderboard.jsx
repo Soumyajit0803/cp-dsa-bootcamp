@@ -10,7 +10,6 @@ import { useState, useEffect } from "react";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 
-// import useFetchLC from "../../hooks/useFetchLC";
 import useFetchCF from "../../hooks/useFetchCF";
 
 function CFTag(rating) {
@@ -23,11 +22,11 @@ function CFTag(rating) {
     } else if (1600 <= rating && rating < 1900) {
         return "expert";
     } else if (1900 <= rating && rating < 2100) {
-        return "candidate-master"
+        return "candidate-master";
     } else if (2100 <= rating && rating < 2400) {
-        return "master"
+        return "master";
     } else {
-        return "grandmaster"
+        return "grandmaster";
     }
 }
 
@@ -75,9 +74,10 @@ const cfcolumns = [
         sortable: false,
         renderCell: (params) => (
             <Tooltip title={params.value} arrow placement="right">
-                {params.value}
+                <>{params.value}</>
             </Tooltip>
         ),
+        // rendr
     },
     {
         field: "handle",
@@ -215,7 +215,7 @@ const lccolumns = [
         resizable: false,
         headerAlign: "center",
         renderCell: (params) => (
-            <Tooltip title={<GetQuestionStats handle="__Abhijit__" />} arrow placement="right">
+            <Tooltip title={<><GetQuestionStats handle="__Abhijit__" /></>} arrow placement="right">
                 {params.value}
             </Tooltip>
         ),
@@ -254,7 +254,6 @@ const Leaderboard = () => {
 
     const width = window.innerWidth;
 
-
     for (let user of userData) {
         if (!user["Codeforce  Handle "] || !user["Leetcode Handle "]) {
             continue;
@@ -270,18 +269,17 @@ const Leaderboard = () => {
     const v = Object.keys(cfUsers);
     const { data, loading, error } = useFetchCF(v);
 
-    if (loading) {
-        console.log("Fetching Data");
-        return <Loading />;
-    }
+    // if (loading) {
+    //     console.log("Fetching Data");
+    //     return <Loading />;
+    // }
 
-    if (error) {
-        console.log("error occured.");
-        return <Error message={error.response.request.responseText} error_code={error.response.request.status} />;
-    }
-    else {
-
-        for(let user of data){
+    // if (error) {
+    //     console.log("error occured.");
+    //     return <Error message={error.response.request.responseText} error_code={error.response.request.status} />;
+    // }
+    if (!loading && !error) {
+        for (let user of data) {
             [user.name, user.year] = cfUsers[user.handle.toLowerCase()];
         }
     }
@@ -295,7 +293,12 @@ const Leaderboard = () => {
                 Discover the top coders, track your progress, and compete for the top spot on our dynamic competitive
                 programming leaderboard!
             </div>
-            <ButtonGroup size="large" aria-label="coding website" className="button-group" orientation={width < 340 ? "vertical":"horizontal"}>
+            <ButtonGroup
+                size="large"
+                aria-label="coding website"
+                className="button-group"
+                orientation={width < 340 ? "vertical" : "horizontal"}
+            >
                 <Button
                     className={"table-swap " + (show ? "active" : "")}
                     size="large"
@@ -314,8 +317,13 @@ const Leaderboard = () => {
                 </Button> */}
             </ButtonGroup>
             <Box className="datagrid-wrapper">
-                {<CustomDataGrid rows={data} columns={cfcolumns} toshow={show} />}
-                {/* <CustomDataGrid rows={cfrows} columns={lccolumns} toshow={!show} /> */}
+                {loading ? (
+                    <Loading />
+                ) : error ? (
+                    <Error message={error.response.request.responseText} error_code={error.response.request.status} />
+                ) : (
+                    <CustomDataGrid rows={data} columns={cfcolumns} toshow={show} />
+                )}
             </Box>
         </div>
     );

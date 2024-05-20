@@ -1,6 +1,10 @@
 // src/hooks/useFetchCF.js
 import { useState, useEffect } from "react";
 import { fetchData } from "../api/apiservice";
+<<<<<<< HEAD
+=======
+import useFetchCF from "./useFetchCF";
+>>>>>>> 7abd3cedb63ec249c7fbc977ae42a9a218b68a0c
 
 const getContest = async (handles, id) => {
     var handleSep = "";
@@ -16,7 +20,7 @@ const getContest = async (handles, id) => {
         questions.push({
             id: problem.index,
             name: problem.name,
-            points: problem.points,
+            points: problem.points || 1,
         });
     }
 
@@ -43,16 +47,25 @@ const getContest = async (handles, id) => {
             rows: participants,
         },
     };
+<<<<<<< HEAD
     return prunedResult;
 };
 
 const INTERVAL = 1 * 1000;
 
+=======
+
+    // console.log(JSON.stringify(prunedResult, null, 2));
+    return prunedResult;
+};
+
+>>>>>>> 7abd3cedb63ec249c7fbc977ae42a9a218b68a0c
 const useFetchCFcontest = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
+<<<<<<< HEAD
     const lastLoadCF = parseInt(localStorage.getItem("Contestload"));
     const cacheAvailable = lastLoadCF !== null;
     // console.log("Last loading attempt at: " + lastLoadCF);
@@ -89,6 +102,22 @@ const useFetchCFcontest = () => {
             } finally {
                 setLoading(false);
             }
+=======
+    const callAPI = async (handles, id) => {
+        setLoading(true);
+
+        try {
+            const basic = await getContest(handles, id);
+            setData(basic);
+            setError(null);
+            // console.log(JSON.stringify(basic, null, 2));
+        } catch (err) {
+            console.log("Error has been encountered");
+            console.log(err);
+            setError(err);
+        } finally {
+            setLoading(false);
+>>>>>>> 7abd3cedb63ec249c7fbc977ae42a9a218b68a0c
         }
     };
 

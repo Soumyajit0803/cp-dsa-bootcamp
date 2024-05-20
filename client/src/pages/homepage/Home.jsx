@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../../assets/banner.png";
+import banner from "../../../public/assets/banner.webp";
 import NameCard from "../../components/NameCard/NameCard";
 import "./home.css";
 import codeiiest_gdsc from "../../assets/Codeiiest-GDSCiiest.png";
@@ -47,7 +47,7 @@ function Introduction() {
                     >
                         Register Now
                     </Button>
-                    <Button
+                    {/* <Button
                         sx={{
                             color: "white",
                             fontWeight: 600,
@@ -56,11 +56,11 @@ function Introduction() {
                         }}
                         endIcon={<Meeting color="#fff" cls={"button-icon"}/>}
                         variant="contained"
-                        href="https://meet.google.com/poe-isrk-yqf"
+                        href="https://chat.whatsapp.com/GjffQq9LHdw8oLxfYqtJlM"
                         target="_blank"
                     >
-                        Join The Bootcamp
-                    </Button>
+                        Join Whatsapp Group
+                    </Button> */}
                 </Box>
             </div>
             <div className="banner">
@@ -79,7 +79,7 @@ function MeetTheTeam() {
                 <span className="gradient-text">Mentors</span>
             </div>
             <div className="content">
-                Get ready ready to turbocharge your skills with our awesome mentors! With their expert guidance, you'll
+                Get ready to turbocharge your skills with our awesome mentors! With their expert guidance, you'll
                 master Data Structures and Algorithms while having an amazing Competitive Programming experience. Get
                 inspired, tackle challenges, and elevate your coding game to new heights!
             </div>

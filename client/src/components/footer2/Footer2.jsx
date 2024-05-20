@@ -107,59 +107,59 @@ const Footer2 = () => {
                     </Link>
 
                     <div className="title-logo">CP/DSA Bootcamp</div>
-                    <div className="address">Organised in collaoration with CodeIIEST and GDSC IIEST</div>
+                    <div className="address">Organised in collaboration with CodeIIEST and GDSC IIEST</div>
                 </div>
                 <div className="right-col">
                     <div className="title">Coordinators</div>
                     <div className="contacts">
                         <div className="contact">
-                            <a href="#">
+                            <a target = "_blank" rel = "noopener noreferrer" href="#">
                                 <div className="name">Ankita Tripathi</div>
                             </a>
 
                             <div className="ph-num">Backend</div>
                         </div>
                         <div className="contact">
-                            <a href="#">
+                            <a target = "_blank" rel = "noopener noreferrer" href="https://www.linkedin.com/in/satyam-yadav-761b65268/">
                                 <div className="name">Satyam Yadav</div>
                             </a>
 
                             <div className="ph-num">Coordinator</div>
                         </div>
                         <div className="contact">
-                            <a href="#">
+                            <a target = "_blank" rel = "noopener noreferrer" href="https://www.linkedin.com/in/shreyansh-srivastava-29b749250">
                                 <div className="name">Shreyansh Srivastava</div>
                             </a>
 
                             <div className="ph-num">Coordinator</div>
                         </div>
                         <div className="contact">
-                            <a href="#">
+                            <a target = "_blank" rel = "noopener noreferrer" href="#">
                                 <div className="name">Anurag Chaurasia</div>
                             </a>
 
                             <div className="ph-num">Backend</div>
                         </div>
                         <div className="contact">
-                            <a href="#">
+                            <a target = "_blank" rel = "noopener noreferrer" href="#">
                                 <div className="name">Kiran</div>
                             </a>
 
-                            <a href="#">
+                            <a target = "_blank" rel = "noopener noreferrer" href="#">
                                 <div className="ph-num">Poster design</div>
                             </a>
                         </div>
                         <div className="contact">
-                            <a href="#">
+                            <a href="https://www.linkedin.com/in/rohit-rahul-dey-018125249/" target = "_blank" rel = "noopener noreferrer">
                                 <div className="name">Rohit Rahul Dey</div>
                             </a>
 
-                            <a href="#">
+                            <a target = "_blank" rel = "noopener noreferrer" href="#">
                                 <div className="ph-num">Poster design</div>
                             </a>
                         </div>
                         <div className="contact">
-                            <a href="#">
+                            <a target = "_blank" rel = "noopener noreferrer" href="#">
                                 <div className="name">Sakshi</div>
                             </a>
 
