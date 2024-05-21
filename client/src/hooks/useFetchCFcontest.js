@@ -1,10 +1,7 @@
 // src/hooks/useFetchCF.js
 import { useState, useEffect } from "react";
 import { fetchData } from "../api/apiservice";
-<<<<<<< HEAD
-=======
 import useFetchCF from "./useFetchCF";
->>>>>>> 7abd3cedb63ec249c7fbc977ae42a9a218b68a0c
 
 const getContest = async (handles, id) => {
     var handleSep = "";
@@ -47,62 +44,16 @@ const getContest = async (handles, id) => {
             rows: participants,
         },
     };
-<<<<<<< HEAD
-    return prunedResult;
-};
-
-const INTERVAL = 1 * 1000;
-
-=======
 
     // console.log(JSON.stringify(prunedResult, null, 2));
     return prunedResult;
 };
 
->>>>>>> 7abd3cedb63ec249c7fbc977ae42a9a218b68a0c
 const useFetchCFcontest = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-<<<<<<< HEAD
-    const lastLoadCF = parseInt(localStorage.getItem("Contestload"));
-    const cacheAvailable = lastLoadCF !== null;
-    // console.log("Last loading attempt at: " + lastLoadCF);
-
-    const currLoad = new Date().getTime();
-
-    const callAPI = async (handles, id) => {
-        setLoading(true);
-        if (lastLoadCF + INTERVAL > currLoad && cacheAvailable) {
-            const cache = localStorage.getItem("Contestdata");
-            setData(JSON.parse(cache));
-            console.log("Too many requests. Data cached");
-            setLoading(false);
-        } else {
-            try {
-                const basic = await getContest(handles, id);
-                setData(basic);
-
-                console.log(JSON.stringify(basic, null, 2));
-
-                localStorage.setItem("Contestdata", JSON.stringify(basic));
-                localStorage.setItem("Contestload", JSON.stringify(currLoad));
-            } catch (err) {
-                console.log("Error has been encountered");
-                console.log("CACHING");
-                console.log(err);
-                if (!cacheAvailable) {
-                    setError(err);
-                } else {
-                    const cache = localStorage.getItem("Contestdata");
-                    setData(JSON.parse(cache));
-                    console.log("Caching data saved at: ");
-                }
-            } finally {
-                setLoading(false);
-            }
-=======
     const callAPI = async (handles, id) => {
         setLoading(true);
 
@@ -117,7 +68,6 @@ const useFetchCFcontest = () => {
             setError(err);
         } finally {
             setLoading(false);
->>>>>>> 7abd3cedb63ec249c7fbc977ae42a9a218b68a0c
         }
     };
 

@@ -1,0 +1,53 @@
+{
+    "short_name": "CP/DSA Bootcamp",
+    "description": "Summer Bootcamp on Data Structures & Algorithms (DSA) and Competitive Programming (CP) organized by CODEIIEST and GDSC, IIEST Shibpur",
+    "name": "CP/DSA Bootcamp",
+    "icons": [
+    ],
+    "shortcuts": [
+      {
+        "name": "Leaderboard",
+        "short_name": "Leaderboard",
+        "description": "Discover the top coders, track your progress, and compete for the top spot on our dynamic competitive programming leaderboard",
+        "url": "/leaderboard"
+      },
+      {
+        "name": "Codeforces Contest Results",
+        "short_name": "Contest",
+        "description": "Check out where you stand among your peers in codeforces contests.",
+        "url": "/contest"
+      },
+      {
+        "name": "Resources",
+        "short_name": "Resources",
+        "description": "Resources for reference",
+        "url": "/resources"
+      }
+    ],
+      "screenshots": [
+      {
+        "src": "desktop.png",
+        "type": "image/png",
+        "sizes": "1920x878",
+        "form_factor": "wide",
+              "icons": [{ "src": "favicon-96x96.ico", "sizes": "96x96" }]
+      },
+      {
+        "src": "mobile.png",
+        "type": "image/png",
+        "sizes": "372x805",
+        "form_factor": "narrow",
+              "icons": [{ "src": "favicon-96x96.ico", "sizes": "96x96" }]
+      }
+    ],
+      "id": ".",
+    "start_url": ".",
+    "scope": "/",
+    "orientation": "any",
+    "lang": "en",
+    "display": "standalone",
+    "theme_color": "#2586f8",
+    "background_color": "#0f1214",
+    "categories": ["Competitive programming", "Data Structure and algorithms", "Summer Bootcamp"]
+  }
+  
