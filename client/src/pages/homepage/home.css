@@ -94,7 +94,7 @@
 
 .home .about .content,
 .home .team .content {
-    width: min(75ch, 100%);
+    width: min(70ch, 100%);
     text-align: center;
 }
 
@@ -124,7 +124,7 @@
     width: 1em;
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 900px){
     .intro .banner{
         display: none
     }

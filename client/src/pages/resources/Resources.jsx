@@ -1,48 +1,77 @@
 import { React, useEffect } from "react";
-import useFetchCF from "../../hooks/useFetchCF";
-import useFetchLC from "../../hooks/useFetchLC";
 import { Box, Typography } from "@mui/material";
 import "./Resources.css";
-import Loading from "../../components/loading/Loading";
-import Error from "../../components/error/Error";
-
-const CF_HANDLES = () => {
-    const usernames = ["SD125","tourist"];
-    return usernames
-};
-
-const LC_HANDLES = () => {
-    const usernames = ["SamyajitDas", "__Abhijit__"];
-    return usernames
-};
-
-// const Resources = () => {
-//     const { data, loading, error } = useFetchLC(LC_HANDLES());
-
-//     if (loading) {
-//         console.log("Fetching data");
-//         return <Loading />;
-//     }
-//     if (error) {
-//         console.log(error);
-//         return <Error message={error.response.request.responseText} error_code={error.response.request.status} />;
-//     }
-
-//     return (
-//         <Box sx={{ marginTop: 15 }}>
-//             <h1>Data from API:</h1>
-//             <pre>{JSON.stringify(data, null, 2)}</pre>
-//         </Box>
-//         // <Error message="This is detailed message" error_code={"NET _ERR"} status={404} />
-//     );
-// };
+import ResourceCard from "../../components/resourceCard/resourceCard";
 
 const Resources = () => {
-  return (
-    <div className="resources-wrapper">
-      <Typography variant="h3" sx = {{color: "var(--normal-text)"}}>Coming Soon...</Typography>
-    </div>
-  )
-}
+    return (
+        <div className="resources">
+            <div className="heading gradient-text">Resources</div>
+            <div className="content">
+                Discover a comprehensive collection of learning resources tailored for competitive programming
+                enthusiasts. Access a variety of questions, study materials, and practice problems designed to enhance
+                your coding skills and help you excel in CP competitions.
+            </div>
+            <div className="list">
+                <ResourceCard
+                    session={0}
+                    text={""}
+                    sheetLink={"https://docs.google.com/document/d/1aHA1rGATnrAG0l2J6NlR981OSo3V41vx/edit?usp=sharing&ouid=117739622112221879547&rtpof=true&sd=true"}
+                    heading={"Introduction"}
+                    datetime={"19th May, 6-8pm IST"}
+                    extraLinks={{"CP setup @Sublime Text":"https://youtu.be/Zlx7gmt3lBU?si=2FdGVLUkTBLIqiAv"}}
+                />
+                <ResourceCard
+                    session={1}
+                    text={""}
+                    sheetLink={""}
+                    heading={"Arrays (Part I)"}
+                    datetime={"1st June, 6 - 8 pm IST"}
+                    extraLinks={null}
+                />
+                <ResourceCard
+                    session={2}
+                    text={""}
+                    sheetLink={""}
+                    heading={"Arrays Part II"}
+                    datetime={"8th June, 6-8pm IST"}
+                    extraLinks={null}
+                />
+                <ResourceCard
+                    session={3}
+                    text={""}
+                    sheetLink={""}
+                    heading={"Arrays Part III"}
+                    datetime={"15th June, 6-8pm IST"}
+                    extraLinks={null}
+                />
+                <ResourceCard
+                    session={4}
+                    text={""}
+                    sheetLink={""}
+                    heading={"Strings"}
+                    datetime={"22nd June, 6-8pm IST"}
+                    extraLinks={null}
+                />
+                <ResourceCard
+                    session={5}
+                    text={""}
+                    sheetLink={""}
+                    heading={"Bit Manipulation"}
+                    datetime={"27th June, 6-8pm IST"}
+                    extraLinks={null}
+                />
+                <ResourceCard
+                    session={""}
+                    text={"Miscellaneous questions from topics discussed so far"}
+                    sheetLink={""}
+                    heading={"Practical Session"}
+                    datetime={"4th July, 6-8pm IST"}
+                    extraLinks={null}
+                />
+            </div>
+        </div>
+    );
+};
 
 export default Resources;
