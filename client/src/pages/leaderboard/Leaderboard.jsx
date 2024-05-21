@@ -254,15 +254,29 @@ const Leaderboard = () => {
 
     const width = window.innerWidth;
 
+    var res = 0
     for (let user of userData) {
-        if (!user["Codeforce  Handle "] || !user["Leetcode Handle "]) {
+        const h = user["Codeforce  Handle "].trim()
+        if (!h || h.includes(" ")) {
+            console.log("removed this user(left empty) "+h);
+            res += 1;
             continue;
         }
-        if (user["Codeforce  Handle "].includes(" ") || user["Leetcode Handle "].includes(" ")) {
-            continue;
-        }
-        cfUsers[user["Codeforce  Handle "].toLowerCase()] = [user.Name, user["Year (1/2/3/4)"]];
+
+        // if ((h.toLowerCase()) in cfUsers) {
+        //     console.log("Repeated "+h);
+        // }
+        // if (h.includes(" ")) {
+        //     console.log("removed this user(space there) "+h);
+        //     res += 1;
+        //     continue;
+        // }
+        cfUsers[h.toLowerCase()] = [user.Name, user["Year (1/2/3/4)"]];
     }
+
+    // console.log("original length: " + userData.length);
+    // console.log("Final length: " + Object.keys(cfUsers).length);
+    // console.log("difference: "+res);
 
     // const { lcData, lcLoading, lcError } = useFetchLC(Object.keys(lcUsers));
 

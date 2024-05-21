@@ -8,6 +8,18 @@ import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 import useFetchCFcontest from "../../hooks/useFetchCFcontest";
 import useFetchCF from "../../hooks/useFetchCF";
+// import userData from "../../../public/assets/data/data.json"
+
+var cfUsers = {}
+for (let user of userData) {
+    if (!user["Codeforce  Handle "] || !user["Leetcode Handle "]) {
+        continue;
+    }
+    if (user["Codeforce  Handle "].includes(" ") || user["Leetcode Handle "].includes(" ")) {
+        continue;
+    }
+    cfUsers[user["Codeforce  Handle "].toLowerCase()] = user.Name;
+}
 
 function Hacks({ passed, failed }) {
     return (
@@ -116,7 +128,7 @@ const cfcolumns = [
         sortable: false,
         resizable: false,
         renderCell: (params) => (
-            <Tooltip title={<Msg msg={CFTag(params.row.rating) + ` ${params.value}`} />} arrow placement="right">
+            <Tooltip title={<Msg msg={CFTag(params.row.rating) + ` ${cfUsers[params.value.toLowerCase()]}`} />} arrow placement="right">
                 <a
                     className={"usr_name usr-" + CFTag(params.row.rating)}
                     href={`https://codeforces.com/profile/${params.value}`}
