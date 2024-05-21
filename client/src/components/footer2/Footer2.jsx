@@ -160,7 +160,7 @@ const Footer2 = () => {
                         </div>
                         <div className="contact">
                             <a target = "_blank" rel = "noopener noreferrer" href="#">
-                                <div className="name">Sakshi</div>
+                                <div className="name">Sakshi Mishra</div>
                             </a>
 
                             <div className="ph-num">Graphic designing</div>

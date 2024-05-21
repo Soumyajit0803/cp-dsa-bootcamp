@@ -3,25 +3,59 @@
     "description": "Summer Bootcamp on Data Structures & Algorithms (DSA) and Competitive Programming (CP) organized by CODEIIEST and GDSC, IIEST Shibpur",
     "name": "CP/DSA Bootcamp",
     "icons": [
+      {
+        "src": "favicon-64.ico",
+        "sizes": "64x64",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "favicon-96.ico",
+        "sizes": "96x96",
+        "type": "image/png"
+      },
+      {
+        "src": "favicon-128.ico",
+        "sizes": "128x128",
+        "type": "image/png"
+      },
+      {
+        "src": "favicon-192.ico",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "favicon.png",
+        "sizes": "900x900",
+        "type": "image/png"
+      },
+      {
+        "src": "maskable.png",
+        "sizes": "134x134",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
     ],
     "shortcuts": [
       {
         "name": "Leaderboard",
         "short_name": "Leaderboard",
         "description": "Discover the top coders, track your progress, and compete for the top spot on our dynamic competitive programming leaderboard",
-        "url": "/leaderboard"
+        "url": "/leaderboard",
+        "icons": [{ "src": "/favicon-96.ico", "sizes": "96x96" }]
       },
       {
         "name": "Codeforces Contest Results",
         "short_name": "Contest",
         "description": "Check out where you stand among your peers in codeforces contests.",
-        "url": "/contest"
+        "url": "/contest",
+        "icons": [{ "src": "/favicon-96.ico", "sizes": "96x96" }]
       },
       {
         "name": "Resources",
         "short_name": "Resources",
         "description": "Resources for reference",
-        "url": "/resources"
+        "url": "/resources",
+        "icons": [{ "src": "/favicon-96.ico", "sizes": "96x96" }]
       }
     ],
       "screenshots": [
