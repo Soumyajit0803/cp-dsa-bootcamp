@@ -37,7 +37,7 @@ export default function ResourceCard({ session, heading, text, sheetLink, extraL
                 {extraLinks &&
                     Object.keys(extraLinks).map((link, i) => {
                         return (
-                            <Button className={"table-swap"} size="large" href={extraLinks[link]} target="_blank">
+                            <Button className={"table-swap"} size="large" href={extraLinks[link]} target="_blank" key={i}>
                                 {link}
                             </Button>
                         );
