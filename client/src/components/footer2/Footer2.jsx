@@ -113,7 +113,7 @@ const Footer2 = () => {
                     <div className="title">Coordinators</div>
                     <div className="contacts">
                         <div className="contact">
-                            <a target = "_blank" rel = "noopener noreferrer" href="#">
+                            <a target = "_blank" rel = "noopener noreferrer" href="https://www.linkedin.com/in/ankita-tripathi-4ba5b1259">
                                 <div className="name">Ankita Tripathi</div>
                             </a>
 
@@ -141,25 +141,20 @@ const Footer2 = () => {
                             <div className="ph-num">Backend</div>
                         </div>
                         <div className="contact">
-                            <a target = "_blank" rel = "noopener noreferrer" href="#">
-                                <div className="name">Kiran</div>
+                            <a target = "_blank" rel = "noopener noreferrer" href="https://www.linkedin.com/in/kiran-tikaraya-2a02bb264">
+                                <div className="name">Kiran Tikaraya</div>
                             </a>
 
-                            <a target = "_blank" rel = "noopener noreferrer" href="#">
                                 <div className="ph-num">Poster design</div>
-                            </a>
                         </div>
                         <div className="contact">
                             <a href="https://www.linkedin.com/in/rohit-rahul-dey-018125249/" target = "_blank" rel = "noopener noreferrer">
                                 <div className="name">Rohit Rahul Dey</div>
                             </a>
-
-                            <a target = "_blank" rel = "noopener noreferrer" href="#">
                                 <div className="ph-num">Poster design</div>
-                            </a>
                         </div>
                         <div className="contact">
-                            <a target = "_blank" rel = "noopener noreferrer" href="#">
+                            <a target = "_blank" rel = "noopener noreferrer" href="https://www.linkedin.com/in/sakshi-mishra-6b609a25b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
                                 <div className="name">Sakshi Mishra</div>
                             </a>
 
@@ -186,8 +181,8 @@ const Footer2 = () => {
                 </div>
             </div>
             <div className="address">
-                Made with <span style={{color: "white"}}>💙</span> by <a className="makers" href="https://abhijit-karmakar.vercel.app/">Abhijit Karmakar</a> and {" "}
-                <a href="https://soumyajit-dev.vercel.app/" className="makers">Soumyajit Karmakar</a>
+                Made with <span style={{color: "white"}}>💙</span> by <a className="makers" href="https://abhijit-karmakar.vercel.app/" target="_blank" rel="noopener noreferrer">Abhijit Karmakar</a> and {" "}
+                <a href="https://soumyajit-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="makers">Soumyajit Karmakar</a>
             </div>
         </div>
     );
