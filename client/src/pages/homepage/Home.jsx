@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../../assets/banner.png";
+import banner from "../../../public/assets/banner.webp";
 import NameCard from "../../components/NameCard/NameCard";
 import "./home.css";
 import codeiiest_gdsc from "../../assets/Codeiiest-GDSCiiest.png";
@@ -79,7 +79,7 @@ function MeetTheTeam() {
                 <span className="gradient-text">Mentors</span>
             </div>
             <div className="content">
-                Get ready ready to turbocharge your skills with our awesome mentors! With their expert guidance, you'll
+                Get ready to turbocharge your skills with our awesome mentors! With their expert guidance, you'll
                 master Data Structures and Algorithms while having an amazing Competitive Programming experience. Get
                 inspired, tackle challenges, and elevate your coding game to new heights!
             </div>

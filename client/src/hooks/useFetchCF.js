@@ -104,7 +104,7 @@ const useFetchCF = (endpoint) => {
                     // console.log(contests);
                     // console.log(solves);
 
-                    const basicData = basic.sort((a, b) => -a.maxrating + b.maxrating)
+                    const basicData = basic.sort((a, b) => -a.rating + b.rating)
                     setData(basicData);
                     // console.log(basicData);
 
