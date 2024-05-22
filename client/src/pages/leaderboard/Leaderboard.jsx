@@ -258,7 +258,7 @@ const Leaderboard = () => {
     for (let user of userData) {
         const h = user["Codeforce  Handle "].trim()
         if (!h || h.includes(" ")) {
-            console.log("removed this user(left empty) "+h);
+            // console.log("removed this user(left empty) "+h);
             res += 1;
             continue;
         }
