@@ -12,6 +12,16 @@ const getContests = async (handles) => {
     return prunedResult;
 };
 
+const sortingFunc = (a, b) => {
+    if (a.rating !==b.rating) {
+        return b.rating - a.rating
+    } else if (a.maxrating !== b.maxrating) {
+        return b.maxrating - a.maxrating
+    } else {
+        return a.handle - b.handle
+    }
+}
+
 const Count = (sub) => {
     const solves = new Set();
     var size = 0;
@@ -104,9 +114,9 @@ const useFetchCF = (endpoint) => {
                     // console.log(contests);
                     // console.log(solves);
 
-                    const basicData = basic.sort((a, b) => -a.rating + b.rating)
+                    const basicData = basic.sort(sortingFunc)
                     setData(basicData);
-                    // console.log(basicData);
+                    console.log(basicData);
 
                     localStorage.setItem("CFdata", JSON.stringify(basicData));
                     localStorage.setItem("CFload", JSON.stringify(currLoad));
