@@ -116,7 +116,7 @@ const useFetchCF = (endpoint) => {
 
                     const basicData = basic.sort(sortingFunc)
                     setData(basicData);
-                    console.log(basicData);
+                    // console.log(basicData);
 
                     localStorage.setItem("CFdata", JSON.stringify(basicData));
                     localStorage.setItem("CFload", JSON.stringify(currLoad));

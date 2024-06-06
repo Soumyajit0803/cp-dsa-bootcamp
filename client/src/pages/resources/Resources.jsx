@@ -24,10 +24,10 @@ const Resources = () => {
                 <ResourceCard
                     session={1}
                     text={""}
-                    sheetLink={""}
+                    sheetLink={"https://docs.google.com/document/d/1UQzq2ujIzM2iBNiz-Tw0uSAPqdlVPgUt/edit?usp=sharing&ouid=117739622112221879547&rtpof=true&sd=true"}
                     heading={"Arrays (Part I)"}
                     datetime={"1st June, 6 - 8 pm IST"}
-                    extraLinks={null}
+                    extraLinks={{"none": ""}}
                 />
                 <ResourceCard
                     session={2}
