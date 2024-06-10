@@ -294,7 +294,12 @@ const Leaderboard = () => {
     // }
     if (!loading && !error) {
         for (let user of data) {
+            try{
             [user.name, user.year] = cfUsers[user.handle.toLowerCase()];
+            }catch(err){
+                console.log(err)
+                console.log(user)
+            }
         }
     }
 
