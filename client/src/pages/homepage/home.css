@@ -44,8 +44,8 @@
 .gradient-text {
     background: linear-gradient(120deg, var(--text-gradient-1), var(--text-gradient-2));
     /* Add text styles */
-    -webkit-background-clip: text;
     background-clip: text;
+    -webkit-background-clip: text !important;
     color: transparent;
     font-size: 3.5rem;
     font-weight: bolder

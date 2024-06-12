@@ -32,10 +32,10 @@ const Resources = () => {
                 <ResourceCard
                     session={2}
                     text={""}
-                    sheetLink={""}
+                    sheetLink={"https://docs.google.com/document/d/1RyWq6UrPh5ovv_T_Jkvc5SJ125s2TC-1/edit?usp=sharing&ouid=117739622112221879547&rtpof=true&sd=true"}
                     heading={"Arrays Part II"}
                     datetime={"8th June, 6-8pm IST"}
-                    extraLinks={null}
+                    extraLinks={{"Sliding window playlist": "https://youtube.com/playlist?list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj&si=oiwfh88Ux7f-YsBe"}}
                 />
                 <ResourceCard
                     session={3}
