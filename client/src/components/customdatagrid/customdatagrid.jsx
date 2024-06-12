@@ -50,7 +50,7 @@ function CustomDataGrid({rows, columns, toshow}) {
                     return "row";
                 }}
                 getCellClassName={(params) => {
-                    if (params.field && params.field.length <= 1 && params.field !== "id") {return "q-solve-status"}
+                    if (params.field && params.field.length <= 2 && params.field !== "id") {return "q-solve-status"}
                     return params.field
                 }}
             />
