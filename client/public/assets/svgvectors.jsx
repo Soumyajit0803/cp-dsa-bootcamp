@@ -347,3 +347,15 @@ export function Practice({ cls, color }) {
         </svg>
     );
 }
+
+export function Pending({cls, color}) {
+    return (
+        <svg style={{transform: "scale(1.2)"}} className={cls} fill={color} viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM8,18a2,2,0,1,1,2-2A2,2,0,0,1,8,18Zm8,0a2,2,0,1,1,2-2A2,2,0,0,1,16,18Zm8,0a2,2,0,1,1,2-2A2,2,0,0,1,24,18Z" transform="translate(0 0)"></path> <path id="inner-path" class="cls-1" style={{"fill":"none"}} d="M10,16a2,2,0,1,1-2-2A2,2,0,0,1,10,16Zm6-2a2,2,0,1,0,2,2A2,2,0,0,0,16,14Zm8,0a2,2,0,1,0,2,2A2,2,0,0,0,24,14Z" transform="translate(0 0)"></path> <rect id="_Transparent_Rectangle_" dataName="<Transparent Rectangle>" class="cls-1" width="32" height="32" style={{"fill":"none"}}></rect> </g></svg>
+    )
+}
+
+export function Complete({cls, color}) {
+    return (
+        <svg fill={color} className={cls } viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M854.344 1317.685 503.209 966.55l79.85-79.85 271.285 271.285 520.207-520.32 79.849 79.962-600.056 600.057ZM960.056 0c-529.355 0-960 430.645-960 960s430.645 960 960 960c529.243 0 960-430.645 960-960S1489.3 0 960.056 0Z" fillRule="evenodd"></path> </g></svg>
+    )
+}

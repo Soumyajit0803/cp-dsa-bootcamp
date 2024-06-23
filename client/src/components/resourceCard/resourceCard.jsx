@@ -1,14 +1,31 @@
 import React from "react";
 import "./resourceCard.css";
 import { Button } from "@mui/material";
-import { Practice } from "../../../public/assets/svgvectors";
+import { Practice, Pending, Complete } from "../../../public/assets/svgvectors";
 
 export default function ResourceCard({ session, heading, text, sheetLink, extraLinks, datetime }) {
+    var add = sheetLink.length > 0 ? "one" : "";
     return (
-        <div className="resource-card">
+        <div className={"resource-card " + add}>
             <div className="heading">
-                {session!=="" && (
-                    <div style={{ color: "#6e8491", fontWeight: "500", fontSize: "1rem" }}>Session {session}</div>
+                {1 && (
+                    <div
+                        style={{
+                            color: "#6e8491",
+                            fontWeight: "500",
+                            fontSize: "1rem",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
+                        {session}{" "}
+                        {sheetLink.length > 0 ? (
+                            <Complete cls="done" color={"rgb(58, 252, 61)"} />
+                        ) : (
+                            <Pending cls="done" color="#dcf216" />
+                        )}
+                    </div>
                 )}
                 {heading}
                 <div className="datetime">{datetime}</div>
@@ -37,7 +54,13 @@ export default function ResourceCard({ session, heading, text, sheetLink, extraL
                 {extraLinks &&
                     Object.keys(extraLinks).map((link, i) => {
                         return (
-                            <Button key={i} className={"table-swap"} size="large" href={extraLinks[link]} target="_blank">
+                            <Button
+                                key={i}
+                                className={"table-swap"}
+                                size="large"
+                                href={extraLinks[link]}
+                                target="_blank"
+                            >
                                 {link}
                             </Button>
                         );

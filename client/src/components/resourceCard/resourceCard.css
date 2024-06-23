@@ -11,6 +11,12 @@
     transition: all 0.2s ease;
 }
 
+.done {
+    width: 1em;
+    height: 1em;
+    margin-left: 1ch;
+}
+
 .resource-card:hover {
     background-color: hsl(203, 14%, 10%);
 }
