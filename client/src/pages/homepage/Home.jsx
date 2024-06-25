@@ -5,6 +5,7 @@ import "./home.css";
 import codeiiest_gdsc from "../../assets/Codeiiest-GDSCiiest.png";
 import { Button, Box } from "@mui/material";
 import { Meeting, Sendicon } from "../../../public/assets/svgvectors";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
@@ -32,21 +33,25 @@ function Introduction() {
                     community of passionate learners and seasoned instructors dedicated to your success.
                 </div>
                 <Box className="button-group">
-                    <Button
-                        sx={{
-                            color: "white",
-                            fontWeight: 600,
-                            textDecoration: "none",
-                            fontSize: "1rem",
-                        }}
-                        endIcon={<Sendicon color="#fff" cls={"button-icon"}/>}
-                        color="primary"
-                        variant="contained"
-                        href="https://forms.gle/WH9q332ETaD8ea2N8"
-                        target="_blank"
-                    >
-                        Register Now
-                    </Button>
+                    <Link to={"/leaderboard"}>
+                        <Button
+                            sx={{
+                                color: "white",
+                                fontWeight: 500,
+                                textDecoration: "none",
+                                fontSize: "1rem",
+                                animation: "wiggle 1s linear infinite",
+                                animationDuration: "5s"
+                                // px: "1rem"
+                            }}
+                            endIcon={<Sendicon color="#fff" cls={"button-icon"} />}
+                            color="primary"
+                            variant="contained"
+                            target="_blank"
+                        >
+                            Check Leaderboard
+                        </Button>
+                    </Link>
                     {/* <Button
                         sx={{
                             color: "white",
@@ -64,7 +69,7 @@ function Introduction() {
                 </Box>
             </div>
             <div className="banner">
-                <img src={banner} alt="banner img" />
+                <div className="img"></div>
             </div>
         </div>
     );
@@ -79,9 +84,9 @@ function MeetTheTeam() {
                 <span className="gradient-text">Mentors</span>
             </div>
             <div className="content">
-                Get ready to turbocharge your skills with our awesome mentors! With their expert guidance, you'll
-                master Data Structures and Algorithms while having an amazing Competitive Programming experience. Get
-                inspired, tackle challenges, and elevate your coding game to new heights!
+                Get ready to turbocharge your skills with our awesome mentors! With their expert guidance, you'll master
+                Data Structures and Algorithms while having an amazing Competitive Programming experience. Get inspired,
+                tackle challenges, and elevate your coding game to new heights!
             </div>
             <div className="teams-list">
                 <NameCard

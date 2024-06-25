@@ -113,7 +113,7 @@ const Header = () => {
                 sx={{
                     backgroundColor: "var(--headercolor)",
                     // backdropFilter: "blur(10px)",
-                    py: 0.5,
+                    // py: 0.5,
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
