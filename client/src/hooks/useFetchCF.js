@@ -13,14 +13,14 @@ const getContests = async (handles) => {
 };
 
 const sortingFunc = (a, b) => {
-    if (a.rating !==b.rating) {
-        return b.rating - a.rating
+    if (a.rating !== b.rating) {
+        return b.rating - a.rating;
     } else if (a.maxrating !== b.maxrating) {
-        return b.maxrating - a.maxrating
+        return b.maxrating - a.maxrating;
     } else {
-        return a.handle - b.handle
+        return a.handle - b.handle;
     }
-}
+};
 
 const Count = (sub) => {
     const solves = new Set();
@@ -69,54 +69,32 @@ const getBasic = async (handles) => {
     return prunedResult;
 };
 
-const INTERVAL = 1000;
+const INTERVAL = 5000;
 
 const useFetchCF = (endpoint) => {
-
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [isCached, setIsCached] = useState("Data fetch successful")
 
     const lastLoadCF = parseInt(localStorage.getItem("CFload"));
-    const cacheAvailable = lastLoadCF !== null;
+    const cache = localStorage.getItem("CFdata");
+    const cacheAvailable = (cache !== null) && (lastLoadCF !== null);
     // console.log("Last loading attempt at: " + lastLoadCF);
 
     const currLoad = new Date().getTime();
     useEffect(() => {
-        if (lastLoadCF + INTERVAL > currLoad && cacheAvailable) {
-            const cache = localStorage.getItem("CFdata");
+        if ((lastLoadCF + INTERVAL > currLoad) && cacheAvailable) {
             setData(JSON.parse(cache));
-            // console.log("Too many requests. Data cached");
             setLoading(false);
-
+            setIsCached("Too frequent loading. Showing cached result")
         } else {
-            
             const getData = async () => {
                 try {
-                    // console.log("APIs going to get called");
-                    // const solves = await getSolves(endpoint);
-                    // const contests = await getContests(endpoint);
                     const basic = await getBasic(endpoint);
 
-
-                    // for (let user of basic) {
-                    //     user["solves"] = solves[user.handle];
-                    //     user["contests"] = contests[user.handle];
-                    // }
-
-                    // basic.forEach((user)=>{
-                    //     user['solves'] = solves[user.handle];
-                    //     user["contests"] = contests[user.handle];
-                    // });
-
-                    // console.log("CF is returning this data: ");
-                    // console.log(basic);
-                    // console.log(contests);
-                    // console.log(solves);
-
-                    const basicData = basic.sort(sortingFunc)
+                    const basicData = basic.sort(sortingFunc);
                     setData(basicData);
-                    // console.log(basicData);
 
                     localStorage.setItem("CFdata", JSON.stringify(basicData));
                     localStorage.setItem("CFload", JSON.stringify(currLoad));
@@ -124,10 +102,8 @@ const useFetchCF = (endpoint) => {
                     if (!cacheAvailable) {
                         setError(err);
                     } else {
-                        const cache = localStorage.getItem("CFdata");
                         setData(JSON.parse(cache));
-                        // console.log(err);
-                        // console.log("Error in fetching. Data cached");
+                        setIsCached("Unsuccessful Data fetch. Showing cached result")
                     }
                 } finally {
                     setLoading(false);
@@ -137,7 +113,7 @@ const useFetchCF = (endpoint) => {
         }
     }, []);
 
-    return { data, loading, error };
+    return { data, loading, error, isCached };
 };
 
 export default useFetchCF;

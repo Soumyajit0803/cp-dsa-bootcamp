@@ -13,5 +13,6 @@
 }
 
 .error-container .error-card h3, .error-container .error-card p{
-    color: var(--normal-text)
+    color: var(--normal-text);
+    text-align: center
 }

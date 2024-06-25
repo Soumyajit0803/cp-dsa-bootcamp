@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./leaderboard.css";
-import { Button, Tooltip, ButtonGroup, Box } from "@mui/material";
+import { Button, Tooltip, ButtonGroup, Box, Typography } from "@mui/material";
 import CustomDataGrid from "../../components/customdatagrid/customdatagrid";
 import cf from "../../assets/cf.webp";
 import leetcode from "../../assets/leetcode.png";
@@ -152,101 +152,101 @@ const cfcolumns = [
         headerAlign: "center",
     },
 ];
-const lccolumns = [
-    {
-        field: "id",
-        headerName: "#",
-        width: 50,
-        headerClassName: "lb-header",
-        resizable: false,
-        sortable: false,
-        renderCell: (params) => (
-            <Tooltip title={params.value} arrow placement="right">
-                {params.value}
-            </Tooltip>
-        ),
-    },
-    {
-        field: "username",
-        headerName: "User Handle",
-        width: 200,
-        headerClassName: "lb-header",
-        sortable: false,
-        resizable: false,
-        renderCell: (params) => (
-            <Tooltip title={`${params.value}`} arrow placement="right">
-                <a className="usr_name" href={`https://leetcode.com/u/${params.value}`}>
-                    {params.value}
-                </a>
-            </Tooltip>
-        ),
-    },
-    {
-        field: "year",
-        headerName: "Year",
-        width: 70,
-        sortable: false,
-        headerClassName: "lb-header",
-        resizable: false,
-        headerAlign: "center",
-        renderCell: (params) =>
-            `${params.value}${
-                params.value === 1 ? "st" : params.value === 2 ? "nd" : params.value === 3 ? "rd" : "th"
-            }`,
-    },
-    {
-        field: "contests",
-        headerName: "Contests given",
-        width: 150,
-        headerClassName: "lb-header",
-        resizable: false,
-        headerAlign: "center",
-        renderCell: (params) => (
-            <Tooltip title={params.value} arrow placement="right">
-                {params.value}
-            </Tooltip>
-        ),
-    },
-    {
-        field: "questions",
-        headerName: "Total Qs",
-        width: 120,
-        headerClassName: "lb-header",
-        resizable: false,
-        headerAlign: "center",
-        renderCell: (params) => (
-            <Tooltip title={<><GetQuestionStats handle="__Abhijit__" /></>} arrow placement="right">
-                {params.value}
-            </Tooltip>
-        ),
-    },
-    {
-        field: "cf_rating",
-        headerName: "Rating",
-        width: 90,
-        headerClassName: "lb-header",
-        resizable: false,
-        headerAlign: "center",
-        renderCell: (params) => (
-            <Tooltip title={params.value} arrow placement="right">
-                {params.value}
-            </Tooltip>
-        ),
-    },
-    {
-        field: "cf_best_rating",
-        headerName: "Best Rating",
-        width: 120,
-        headerClassName: "lb-header",
-        resizable: false,
-        headerAlign: "center",
-        renderCell: (params) => (
-            <Tooltip title={params.value} arrow placement="right">
-                {params.value}
-            </Tooltip>
-        ),
-    },
-];
+// const lccolumns = [
+//     {
+//         field: "id",
+//         headerName: "#",
+//         width: 50,
+//         headerClassName: "lb-header",
+//         resizable: false,
+//         sortable: false,
+//         renderCell: (params) => (
+//             <Tooltip title={params.value} arrow placement="right">
+//                 {params.value}
+//             </Tooltip>
+//         ),
+//     },
+//     {
+//         field: "username",
+//         headerName: "User Handle",
+//         width: 200,
+//         headerClassName: "lb-header",
+//         sortable: false,
+//         resizable: false,
+//         renderCell: (params) => (
+//             <Tooltip title={`${params.value}`} arrow placement="right">
+//                 <a className="usr_name" href={`https://leetcode.com/u/${params.value}`}>
+//                     {params.value}
+//                 </a>
+//             </Tooltip>
+//         ),
+//     },
+//     {
+//         field: "year",
+//         headerName: "Year",
+//         width: 70,
+//         sortable: false,
+//         headerClassName: "lb-header",
+//         resizable: false,
+//         headerAlign: "center",
+//         renderCell: (params) =>
+//             `${params.value}${
+//                 params.value === 1 ? "st" : params.value === 2 ? "nd" : params.value === 3 ? "rd" : "th"
+//             }`,
+//     },
+//     {
+//         field: "contests",
+//         headerName: "Contests given",
+//         width: 150,
+//         headerClassName: "lb-header",
+//         resizable: false,
+//         headerAlign: "center",
+//         renderCell: (params) => (
+//             <Tooltip title={params.value} arrow placement="right">
+//                 {params.value}
+//             </Tooltip>
+//         ),
+//     },
+//     {
+//         field: "questions",
+//         headerName: "Total Qs",
+//         width: 120,
+//         headerClassName: "lb-header",
+//         resizable: false,
+//         headerAlign: "center",
+//         renderCell: (params) => (
+//             <Tooltip title={<><GetQuestionStats handle="__Abhijit__" /></>} arrow placement="right">
+//                 {params.value}
+//             </Tooltip>
+//         ),
+//     },
+//     {
+//         field: "cf_rating",
+//         headerName: "Rating",
+//         width: 90,
+//         headerClassName: "lb-header",
+//         resizable: false,
+//         headerAlign: "center",
+//         renderCell: (params) => (
+//             <Tooltip title={params.value} arrow placement="right">
+//                 {params.value}
+//             </Tooltip>
+//         ),
+//     },
+//     {
+//         field: "cf_best_rating",
+//         headerName: "Best Rating",
+//         width: 120,
+//         headerClassName: "lb-header",
+//         resizable: false,
+//         headerAlign: "center",
+//         renderCell: (params) => (
+//             <Tooltip title={params.value} arrow placement="right">
+//                 {params.value}
+//             </Tooltip>
+//         ),
+//     },
+// ];
 
 const Leaderboard = () => {
     const [show, setShow] = useState(1);
@@ -254,51 +254,27 @@ const Leaderboard = () => {
 
     const width = window.innerWidth;
 
-    var res = 0
+    var res = 0;
     for (let user of userData) {
-        const h = user["Codeforce  Handle "].trim()
+        const h = user["Codeforce  Handle "].trim();
         if (!h || h.includes(" ")) {
             // console.log("removed this user(left empty) "+h);
             res += 1;
             continue;
         }
-
-        // if ((h.toLowerCase()) in cfUsers) {
-        //     console.log("Repeated "+h);
-        // }
-        // if (h.includes(" ")) {
-        //     console.log("removed this user(space there) "+h);
-        //     res += 1;
-        //     continue;
-        // }
         cfUsers[h.toLowerCase()] = [user.Name, user["Year (1/2/3/4)"]];
     }
 
-    // console.log("original length: " + userData.length);
-    // console.log("Final length: " + Object.keys(cfUsers).length);
-    // console.log("difference: "+res);
-
-    // const { lcData, lcLoading, lcError } = useFetchLC(Object.keys(lcUsers));
-
     const v = Object.keys(cfUsers);
-    const { data, loading, error } = useFetchCF(v);
+    const { data, loading, error, isCached } = useFetchCF(v);
 
-    // if (loading) {
-    //     console.log("Fetching Data");
-    //     return <Loading />;
-    // }
-
-    // if (error) {
-    //     console.log("error occured.");
-    //     return <Error message={error.response.request.responseText} error_code={error.response.request.status} />;
-    // }
     if (!loading && !error) {
         for (let user of data) {
-            try{
-            [user.name, user.year] = cfUsers[user.handle.toLowerCase()];
-            }catch(err){
-                console.log(err)
-                console.log(user)
+            try {
+                [user.name, user.year] = cfUsers[user.handle.toLowerCase()];
+            } catch (err) {
+                console.log(err);
+                console.log(user);
             }
         }
     }
@@ -339,11 +315,15 @@ const Leaderboard = () => {
                 {loading ? (
                     <Loading />
                 ) : error ? (
-                    <Error message={error.response.request.responseText} error_code={error.response.request.status} />
+                    <Error message={"API Fetching Failed. Please try again later"} error_code={error.response.request.status} />
                 ) : (
                     <CustomDataGrid rows={data} columns={cfcolumns} toshow={show} />
+                    
                 )}
+                {!loading && <Typography variant="body1">{isCached}</Typography>}
+            
             </Box>
+            
         </div>
     );
 };

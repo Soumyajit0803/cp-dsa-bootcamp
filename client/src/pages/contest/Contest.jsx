@@ -276,7 +276,7 @@ const Contest = () => {
                 {loading || cfloading ? (
                     <Loading />
                 ) : error || cferror ? (
-                    <Error message={error.response?error.response.data.comment:"Unable to fetch data. Please try again"} error_code={error.response?error.response.request.status:"API error"} />
+                    <Error message={error&&error.response ? error.response.data.comment:"Unable to fetch data. Please try again"} error_code={error&&error.response?error.response.request.status:"API error"} />
                 ) : (
                     data && <CustomDataGrid rows={data.contest.rows} columns={realColumns} toshow={1} />
                 )}
