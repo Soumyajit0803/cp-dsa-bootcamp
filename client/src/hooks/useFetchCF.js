@@ -75,45 +75,54 @@ const useFetchCF = (endpoint) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [isCached, setIsCached] = useState("Data fetch successful")
+    const [isCached, setIsCached] = useState("Data fetch successful");
 
-    const lastLoadCF = parseInt(localStorage.getItem("CFload"));
-    const cache = localStorage.getItem("CFdata");
-    const cacheAvailable = (cache !== null) && (lastLoadCF !== null);
     // console.log("Last loading attempt at: " + lastLoadCF);
 
-    const currLoad = new Date().getTime();
-    useEffect(() => {
-        if ((lastLoadCF + INTERVAL > currLoad) && cacheAvailable) {
+    const getData = async () => {
+
+        const currLoad = new Date().getTime();
+        const lastLoadCF = parseInt(localStorage.getItem("CFload"));
+        const cache = localStorage.getItem("CFdata");
+        const cacheAvailable = cache !== null && lastLoadCF !== null;
+        if (lastLoadCF + INTERVAL > currLoad && cacheAvailable) {
             setData(JSON.parse(cache));
             setLoading(false);
-            setIsCached("Too frequent loading. Showing cached result")
-        } else {
-            const getData = async () => {
-                try {
-                    const basic = await getBasic(endpoint);
-
-                    const basicData = basic.sort(sortingFunc);
-                    setData(basicData);
-
-                    localStorage.setItem("CFdata", JSON.stringify(basicData));
-                    localStorage.setItem("CFload", JSON.stringify(currLoad));
-                } catch (err) {
-                    if (!cacheAvailable) {
-                        setError(err);
-                    } else {
-                        setData(JSON.parse(cache));
-                        setIsCached("Unsuccessful Data fetch. Showing cached result")
-                    }
-                } finally {
-                    setLoading(false);
-                }
-            };
-            getData();
+            setIsCached("Too frequent loading. Showing cached result");
+            return;
         }
+
+        console.log("Called me");
+        setLoading(true);
+        setIsCached("Data fetch successful");
+        setError(null);
+        setData(null);
+        try {
+            const basic = await getBasic(endpoint);
+
+            const basicData = basic.sort(sortingFunc);
+            setData(basicData);
+
+            localStorage.setItem("CFdata", JSON.stringify(basicData));
+            localStorage.setItem("CFload", JSON.stringify(currLoad));
+        } catch (err) {
+            if (!cacheAvailable) {
+                setError(err);
+            } else {
+                setData(JSON.parse(cache));
+                setIsCached("Unsuccessful Data fetch. Showing cached result");
+            }
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    
+    useEffect(() => {
+        getData();
     }, []);
 
-    return { data, loading, error, isCached };
+    return { data, loading, error, isCached, getData };
 };
 
 export default useFetchCF;
