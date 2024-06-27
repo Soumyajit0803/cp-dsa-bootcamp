@@ -10,7 +10,7 @@ import useFetchCFcontest from "../../hooks/useFetchCFcontest";
 import useFetchCF from "../../hooks/useFetchCF";
 // import userData from "../../../public/assets/data/data.json"
 
-var cfUsers = {}
+var cfUsers = {};
 for (let user of userData) {
     if (!user["Codeforce  Handle "] || !user["Leetcode Handle "]) {
         continue;
@@ -106,6 +106,11 @@ function Msg({ msg }) {
     );
 }
 
+function getRank(val, actual) {
+    var rank =  ["🥇", "🥈", "🥉", "4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣","🔟"]
+    return <span>{rank[val - 1]}({actual})</span>;
+}
+
 const cfcolumns = [
     {
         field: "id",
@@ -116,7 +121,7 @@ const cfcolumns = [
         sortable: false,
         renderCell: (params) => (
             <Tooltip title={<Msg msg={params.value} />} arrow placement="right">
-                <>{`${params.value} (${params.row.rank})`}</>
+                {params.value <= 10 ? getRank(params.value, params.row.rank) : `${params.value} (${params.row.rank})`}
             </Tooltip>
         ),
     },
@@ -128,7 +133,11 @@ const cfcolumns = [
         sortable: false,
         resizable: false,
         renderCell: (params) => (
-            <Tooltip title={<Msg msg={CFTag(params.row.rating) + ` ${cfUsers[params.value.toLowerCase()]}`} />} arrow placement="right">
+            <Tooltip
+                title={<Msg msg={CFTag(params.row.rating) + ` ${cfUsers[params.value.toLowerCase()]}`} />}
+                arrow
+                placement="right"
+            >
                 <a
                     className={"usr_name usr-" + CFTag(params.row.rating)}
                     href={`https://codeforces.com/profile/${params.value}`}
@@ -246,7 +255,7 @@ const Contest = () => {
 
     const handleKeyDown = (event) => {
         if (event.key == "Enter") {
-            handleClick()
+            handleClick();
         }
     };
 
@@ -276,7 +285,14 @@ const Contest = () => {
                 {loading || cfloading ? (
                     <Loading />
                 ) : error || cferror ? (
-                    <Error message={error&&error.response ? error.response.data.comment:"Unable to fetch data. Please try again"} error_code={error&&error.response?error.response.request.status:"API error"} />
+                    <Error
+                        message={
+                            error && error.response
+                                ? error.response.data.comment
+                                : "Unable to fetch data. Please try again"
+                        }
+                        error_code={error && error.response ? error.response.request.status : "API error"}
+                    />
                 ) : (
                     data && <CustomDataGrid rows={data.contest.rows} columns={realColumns} toshow={1} />
                 )}
