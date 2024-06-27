@@ -8,6 +8,36 @@
     padding: 2rem;
 }
 
+.lb-page .notification {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    /* border-radius: 10px; */
+    /* animation-duration: 5s; */
+    background-color: var(--text-gradient-1);
+    
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    animation: peeking 2s linear forwards;
+    animation-duration: 5s;
+
+    width: min(100%, min-content);
+    text-align: right;
+    z-index: 100;
+}
+
+@keyframes peeking {
+    10%{
+        top: 60px;
+    }90%{
+        top: 60px;
+        opacity: 1;
+    }100%{
+        top: 0px;
+        opacity: 0;
+    }
+}
+
 .lb-page .leaderboard p,
 .lb-page .leaderboard svg {
     color: #fff !important;
