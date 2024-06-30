@@ -26,6 +26,7 @@
 body {
     margin: 0;
     background-color: #0f1214;
+    overflow-x: hidden;
 }
 
 .icon-buttons {
