@@ -91,8 +91,6 @@ const useFetchCF = (endpoint) => {
             setIsCached("Too frequent loading. Showing cached result");
             return;
         }
-
-        console.log("Called me");
         setLoading(true);
         setIsCached("Data fetch successful");
         setError(null);
@@ -108,6 +106,7 @@ const useFetchCF = (endpoint) => {
         } catch (err) {
             if (!cacheAvailable) {
                 setError(err);
+                setIsCached("No cache available")
             } else {
                 setData(JSON.parse(cache));
                 setIsCached("Unsuccessful Data fetch. Showing cached result");
