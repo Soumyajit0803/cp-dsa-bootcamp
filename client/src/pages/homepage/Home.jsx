@@ -92,7 +92,7 @@ function MeetTheTeam() {
                 <NameCard
                     name={"Samyajit Das"}
                     cf_rating={"Expert"}
-                    cc_rating={4}
+                    cc_rating={5}
                     byline={"Solving problems faster than you can say 'syntax error'"}
                     profilepic={"/assets/profilepic/samyajit_das.jpg"}
                     cf_handle={"SD125"}
