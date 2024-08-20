@@ -206,7 +206,7 @@ const Leaderboard = () => {
                 ) : error ? (
                     <Error
                         message={"API Fetching Failed. Please try again later"}
-                        error_code={error.response.request.status}
+                        error_code={error.response?.request.status}
                     />
                 ) : (
                     <CustomDataGrid rows={data} columns={cfcolumns} toshow={show} provideSearch />
