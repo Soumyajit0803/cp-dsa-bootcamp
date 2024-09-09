@@ -1,5 +1,5 @@
 // src/hooks/useFetchCF.js
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { fetchData } from "../api/apiservice";
 import useFetchCF from "./useFetchCF";
 
@@ -9,8 +9,15 @@ const getContest = async (handles, id) => {
         handleSep = handleSep + i + ";";
     }
     const endpoint = `https://codeforces.com/api/contest.standings?contestId=${id}&asManager=false&handles=${handleSep}`;
+    const endpoint1 = `https://codeforces.com/api/user.info?handles=${handleSep}&checkHstoricHandles=false`;
 
     const response = await fetchData(endpoint);
+
+    var AvatarImage = {};
+    const response1 = await fetchData(endpoint1);
+    response1.result.forEach((user) => {
+        AvatarImage[user.handle] = user.avatar.includes("no-avatar.jpg") ? "" : user.avatar
+    });
 
     const questions = [];
     for (let problem of response.result.problems) {
@@ -26,6 +33,7 @@ const getContest = async (handles, id) => {
     for (let person of response.result.rows) {
         var personHandle = person.party.members[0].handle;
         participants.push({
+            avatar: AvatarImage[personHandle],
             handle: personHandle,
             rank: person.rank,
             points: person.points,

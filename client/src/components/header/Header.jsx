@@ -108,7 +108,7 @@ const Header = () => {
     const theme = useTheme();
     const mobileView = useMediaQuery(theme.breakpoints.down(800));
     return (
-        <>
+        <div>
             <AppBar
                 sx={{
                     backgroundColor: "var(--headercolor)",
@@ -143,7 +143,7 @@ const Header = () => {
                 </Box>
                 {mobileView ? <Menubutton /> : <HeaderTabs />}
             </AppBar>
-        </>
+        </div>
     );
 };
 

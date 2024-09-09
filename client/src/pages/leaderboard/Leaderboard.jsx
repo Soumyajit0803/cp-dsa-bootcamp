@@ -1,9 +1,7 @@
 import * as React from "react";
 import "./leaderboard.css";
-import { Button, Tooltip, ButtonGroup, Box, Typography, SvgIcon } from "@mui/material";
+import { Button, Tooltip, ButtonGroup, Box, Typography, SvgIcon, Avatar } from "@mui/material";
 import CustomDataGrid from "../../components/customdatagrid/customdatagrid";
-import cf from "../../assets/cf.webp";
-import leetcode from "../../assets/leetcode.png";
 
 import userData from "../../../public/assets/data/data.json";
 import { useState, useEffect } from "react";
@@ -67,9 +65,12 @@ function Msg({ msg }) {
 }
 
 function getRank(val) {
-    var rank =  ["🥇", "🥈", "🥉", "4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣","🔟"]
-    if (val-1 < 10) return <span style={{transform: "scale(1.5)", display: "flex", transformOrigin: "left"}}>{rank[val-1]}</span>
-    return val
+    var rank = ["🥇", "🥈", "🥉", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"];
+    if (val - 1 < 10)
+        return (
+            <span style={{ transform: "scale(1.5)", display: "flex", transformOrigin: "left" }}>{rank[val - 1]}</span>
+        );
+    return val;
 }
 
 const cfcolumns = [
@@ -90,14 +91,18 @@ const cfcolumns = [
     {
         field: "handle",
         headerName: "User Handle",
-        width: 200,
+        width: 250,
         headerClassName: "lb-header",
         sortable: false,
         resizable: false,
         renderCell: (params) => (
-            <Tooltip title={<Msg msg={`${params.row.rank} ${params.row.name}`} />} arrow placement="right">
+            <Tooltip title={<Msg msg={`${params.row.rank}, ${params.row.name}`} />} arrow placement="right">
                 <a className="usr_name" href={`https://codeforces.com/profile/${params.value}`}>
-                    {params.value}
+                    <div className="usr">
+                        <Avatar sx={{ width: 28, height: 28, bgcolor: 'var(--text-gradient-1)' }} src={`${params.row.avatar}`}>{params.value[0].toUpperCase()}</Avatar>
+                        {params.value}
+                    </div>
+                    {/* {params.value} */}
                 </a>
             </Tooltip>
         ),
@@ -115,7 +120,7 @@ const cfcolumns = [
                 params.value === 1 ? "st" : params.value === 2 ? "nd" : params.value === 3 ? "rd" : "th"
             }`,
     },
-    
+
     {
         field: "rating",
         headerName: "Rating",
@@ -210,7 +215,6 @@ const Leaderboard = () => {
                     />
                 ) : (
                     <CustomDataGrid rows={data} columns={cfcolumns} toshow={show} provideSearch />
-                    
                 )}
                 {!loading && <Typography variant="body1">{isCached}</Typography>}
             </Box>

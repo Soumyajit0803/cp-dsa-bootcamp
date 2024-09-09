@@ -63,6 +63,7 @@ const getBasic = async (handles) => {
             maxrank: user.maxRank || "unrated",
             rank: user.rank || "unrated",
             handle: user.handle,
+            avatar: user.avatar.includes("no-avatar.jpg") ? "" : user.avatar
         });
     });
     // console.log(prunedResult);

@@ -161,3 +161,10 @@
     width: 100%;
     max-width: min-content;
 }
+
+.usr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}

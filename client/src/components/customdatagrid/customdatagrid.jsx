@@ -68,7 +68,7 @@ function CustomDataGrid({ rows, columns, toshow, provideSearch }) {
     rows.forEach((row, index) => {
         row.id = index + 1;
     });
-
+    
     const [idx, setIdx] = useState(-1);
     const [successfulFind, setSuccessfulFind] = useState(1)
     // const [handle, setHandle] = useState("");

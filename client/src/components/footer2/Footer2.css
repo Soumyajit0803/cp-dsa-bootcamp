@@ -7,7 +7,8 @@
 	gap: 2rem;
 	background: rgb(0, 0, 0);
 	margin-top: 2rem;
-	color: var(--normal-text)
+	color: var(--normal-text);
+	width: 100%;
 }
 
 .footer-wrapper .address{
@@ -15,7 +16,7 @@
 }
 
 .footer2 {
-	width: 100%;
+	max-width: 1400px;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;

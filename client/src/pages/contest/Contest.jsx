@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./Contest.css";
-import { Button, Tooltip, Box, TextField, Typography } from "@mui/material";
+import { Button, Tooltip, Box, TextField, Typography, Avatar } from "@mui/material";
 import CustomDataGrid from "../../components/customdatagrid/customdatagrid";
 import userData from "../../../public/assets/data/data.json";
 import { useState, useEffect } from "react";
@@ -128,7 +128,7 @@ const cfcolumns = [
     {
         field: "handle",
         headerName: "User Handle",
-        width: 200,
+        width: 250,
         headerClassName: "lb-header",
         sortable: false,
         resizable: false,
@@ -142,7 +142,11 @@ const cfcolumns = [
                     className={"usr_name usr-" + CFTag(params.row.rating)}
                     href={`https://codeforces.com/profile/${params.value}`}
                 >
-                    {params.value}
+                    {/* {params.value} */}
+                    <div className="usr">
+                        <Avatar sx={{ width: 28, height: 28, bgcolor: 'var(--text-gradient-1)' }} src={`${params.row.avatar}`}>{params.value[0].toUpperCase()}</Avatar>
+                        {params.value}
+                    </div>
                 </a>
             </Tooltip>
         ),
