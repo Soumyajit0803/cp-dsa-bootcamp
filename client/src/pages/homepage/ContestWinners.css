@@ -1,0 +1,186 @@
+.contestwin {
+    margin-top: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contestwin .heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0 !important;
+}
+
+.contestwin .heading {
+    width: 100%;
+    text-align: center;
+}
+
+.contestwin .heading .main {
+    font-size: 3rem;
+}
+
+.contestwin .heading .w-gradient-text {
+    background: linear-gradient(0deg, var(--text-gradient-1), var(--text-gradient-2));
+    /* Add text styles */
+    background-clip: text;
+    -webkit-background-clip: text !important;
+    color: transparent;
+}
+
+.contestwin .lbox {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    mask-image: linear-gradient(#000 80%, transparent);
+}
+
+.lcard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #181d20;
+    border: 2px solid;
+    border-radius: 10px;
+    width: 14rem;
+    position: relative;
+    gap: 0.5rem;
+    margin-top: 2.3rem;
+    border-bottom: transparent !important;
+}
+
+.position1 {
+    color: rgb(255, 221, 2);
+    border-color: rgb(255, 221, 2);
+    background-color: hsl(52, 100%, 30%);
+}
+.position2 {
+    color: hsl(0, 0%, 75%);
+    border-color: hsl(0, 0%, 75%);
+    background-color: hsl(0, 0%, 30%);
+}
+.position3 {
+    color: hsl(0, 52%, 51%);
+    border-color: hsl(0, 52%, 51%);
+    background-color: hsl(0, 52%, 30%);
+}
+.position1-name {
+    color: rgb(255, 221, 2);
+}
+.position2-name {
+    color: hsl(0, 0%, 75%);
+}
+.position3-name {
+    color: hsl(0, 52%, 51%);
+}
+
+.lcard .badge {
+    width: 8rem;
+    aspect-ratio: 1/1;
+    mask-image: url("/assets/profilepic/hexagon.svg");
+    mask-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -2.3rem;
+    font-size: 3rem;
+    font-weight: 900;
+    border: 2px solid;
+    font-family: 'consolas';
+    z-index: 2;
+}
+
+.lcard .badgeback {
+    width: 8rem;
+    aspect-ratio: 1/1;
+    mask-image: url("/assets/profilepic/hexagon.svg");
+    mask-size: contain;
+    position: absolute;
+    top: -2.3rem;
+    z-index: 1;
+    transform: scale(1.05);
+    background-color: red;
+}
+
+.lcard .name {
+    margin-top: 5.9rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+} 
+
+.lcard .contestdt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.lcard .contestdt .grank,
+.lcard .contestdt .score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+
+.lcard .contestdt .grank .field,
+.lcard .contestdt .score .field {
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.lcard .contestdt .grank .value,
+.lcard .contestdt .score .value {
+    font-weight: 600;
+    font-size: 2.5rem;
+    font-family: 'consolas';
+}
+
+.lcard .position1-base {
+    height: 75px;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    /* background-color: rgb(255, 221, 2); */
+}
+.lcard .position2-base {
+    height: 45px;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    /* background-color: hsl(0, 0%, 75%); */
+}
+.lcard .position3-base {
+    height: 10px;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    /* background-color: hsl(0, 52%, 51%); */
+}
+
+@media only screen and (max-width: 719px) {
+    .contestwin .lbox {
+        align-items: center;
+        flex-wrap: wrap;
+        mask-image: none;
+    }
+
+    .lcard .position3-base,
+    .lcard .position1-base,
+    .lcard .position2-base {
+        height: 20px;
+    }
+
+    .contestwin .lbox .lcard.pos1 {
+        order: -1;
+    }
+}

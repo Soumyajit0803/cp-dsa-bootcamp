@@ -6,6 +6,7 @@ import codeiiest_gdsc from "../../assets/Codeiiest-GDSCiiest.png";
 import { Button, Box } from "@mui/material";
 import { Meeting, Sendicon } from "../../../public/assets/svgvectors";
 import { Link } from "react-router-dom";
+import ContestWinners from "./ContestWinners"
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Introduction />
             <About />
             <MeetTheTeam />
+            <ContestWinners />
         </div>
     );
 };
