@@ -42,7 +42,7 @@ export default function ContestWinners() {
             <div className="heading">
                 <span className="main gradient-text">Hall Of Fame</span>
                 <h2>
-                    Contest Winners of <span className="w-gradient-text">Codeforces Round 971 Div 4</span>
+                    Contest Winners of <span className="w-gradient-text">Codeforces Round 972 Div 2</span>
                 </h2>
             </div>
             <div className="lbox">
