@@ -47,31 +47,31 @@ export default function ContestWinners() {
             </div>
             <div className="lbox">
                 <WinCard
-                    name={"Abhinav Saha"}
-                    handle={"abhinav_saha"}
+                    name={"Abhinav Verma"}
+                    handle={"legendav007"}
                     position={"position2"}
                     rank={"newbie"}
-                    grank={6429}
+                    grank={8475}
                     crank={"2nd"}
-                    score={1288}
+                    score={3}
                 />
                 <WinCard
-                    name={"Mithun Dutta"}
-                    handle={"Mithun_Dutta"}
+                    name={"Satyam Yadav"}
+                    handle={"Satyamyadav77512"}
                     position={"position1"}
-                    rank={"newbie"}
-                    grank={6173}
+                    rank={"pupil"}
+                    grank={8058}
                     crank={"1st"}
-                    score={1313}
+                    score={3}
                 />
                 <WinCard
-                    name={"Vaibhav Singh"}
-                    handle={"CarbonBlue"}
+                    name={"Prithiraj Biswas"}
+                    handle={"Prithiraj069"}
                     position={"position3"}
                     rank={"newbie"}
-                    grank={6770}
+                    grank={9523}
                     crank={"3rd"}
-                    score={1249}
+                    score={3}
                 />
             </div>
             <Link to={"/contest"}>
