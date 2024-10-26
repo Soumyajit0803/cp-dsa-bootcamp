@@ -12,9 +12,9 @@ const darkTheme = createTheme({
 });
 
 function getRank(val) {
-    var rank =  ["🥇", "🥈", "🥉"]
-    if (val-1 < 3) return rank[val-1]
-    return val
+    var rank = ["🥇", "🥈", "🥉"];
+    if (val - 1 < 3) return rank[val - 1];
+    return val;
 }
 
 function CFTag(rating) {
@@ -45,7 +45,7 @@ function UserFound({ user }) {
         return <></>;
     }
     if (!user) {
-        return <></>
+        return <></>;
     }
     return (
         <div className="f-wrapper">
@@ -68,9 +68,9 @@ function CustomDataGrid({ rows, columns, toshow, provideSearch }) {
     rows.forEach((row, index) => {
         row.id = index + 1;
     });
-    
+
     const [idx, setIdx] = useState(-1);
-    const [successfulFind, setSuccessfulFind] = useState(1)
+    const [successfulFind, setSuccessfulFind] = useState(1);
     // const [handle, setHandle] = useState("");
 
     function ShowResult() {
@@ -78,17 +78,17 @@ function CustomDataGrid({ rows, columns, toshow, provideSearch }) {
         for (let i = 0; i < rows.length; i++) {
             if (rows[i].handle.toLowerCase() === handle.toLowerCase()) {
                 setIdx(i);
-                setSuccessfulFind(true)
+                setSuccessfulFind(true);
                 return;
             }
         }
-        setSuccessfulFind(false)
+        setSuccessfulFind(false);
         setIdx(null);
     }
 
     function handleKeyDown(event) {
-        if (event.key === 'Enter') {
-            ShowResult()
+        if (event.key === "Enter") {
+            ShowResult();
         }
     }
 
@@ -96,70 +96,79 @@ function CustomDataGrid({ rows, columns, toshow, provideSearch }) {
     const display = { zIndex: "100", opacity: 1 };
     return (
         <Box className="leaderboard" sx={toshow ? display : hide}>
-            {provideSearch && (<ThemeProvider theme={darkTheme}>
-                <Box sx={{ display: "flex", gap: "0.5rem", width: "100%" }}>
-                    <TextField
-                        error={!successfulFind}
-                        id="filled-basic"
-                        label="search userhandle"
-                        variant="filled"
-                        className="handleinput"
-                        fullWidth
-                        helperText={successfulFind===1?"":successfulFind ? "User found successfully" : "User handle doeesn't exist."}
-                        // onChange={(e) => setHandle(e.target.value)}
-                        onKeyDown={(e) => handleKeyDown(e)}
-                        color={successfulFind !== 1 ? "success":""}
-                        
-                    />
-                    <IconButton variant="outlined" onClick={() => ShowResult()} className="search-button">
-                        <GridSearchIcon />
-                    </IconButton>
-                </Box>
-                <UserFound user={idx >= 0 ? rows[idx] : -1} />
-            </ThemeProvider>)}
-            <DataGrid
-                sx={{
-                    "& .MuiDataGrid-cell:": {
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                    },
-                    "& .numbers": {
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                    },
-                    "& .MuiDataGrid-row:hover": {
-                        backgroundColor: "#23292d", // Or 'transparent' or whatever color you'd like
-                    },
-                    marginTop: "1rem",
-                }}
-                columns={columns}
-                rows={rows}
-                initialState={{
-                    pagination: {
-                        paginationModel: {
-                            pageSize: 50,
+            {provideSearch && (
+                <ThemeProvider theme={darkTheme}>
+                    <Box sx={{ display: "flex", gap: "0.5rem", width: "100%" }}>
+                        <TextField
+                            error={!successfulFind}
+                            id="filled-basic"
+                            label="search userhandle"
+                            variant="filled"
+                            className="handleinput"
+                            fullWidth
+                            helperText={
+                                successfulFind === 1
+                                    ? ""
+                                    : successfulFind
+                                    ? "User found successfully"
+                                    : "User handle doeesn't exist."
+                            }
+                            // onChange={(e) => setHandle(e.target.value)}
+                            onKeyDown={(e) => handleKeyDown(e)}
+                            color={successfulFind !== 1 ? "success" : ""}
+                        />
+                        <IconButton variant="outlined" onClick={() => ShowResult()} className="search-button">
+                            <GridSearchIcon />
+                        </IconButton>
+                    </Box>
+                    <UserFound user={idx >= 0 ? rows[idx] : -1} />
+                </ThemeProvider>
+            )}
+            <ThemeProvider theme={darkTheme}>
+                <DataGrid
+                    sx={{
+                        "& .MuiDataGrid-cell:": {
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
                         },
-                    },
-                }}
-                disableRowSelectionOnClick
-                autoHeight
-                pageSizeOptions={[50]}
-                disableColumnMenu
-                disableColumnFilter
-                disableColumnSelector
-                disableEval
-                getRowClassName={() => {
-                    return "row";
-                }}
-                getCellClassName={(params) => {
-                    if (params.field && params.field.length <= 2 && params.field !== "id") {
-                        return "q-solve-status";
-                    }
-                    return params.field;
-                }}
-            />
+                        "& .numbers": {
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        },
+                        "& .MuiDataGrid-row:hover": {
+                            backgroundColor: "#23292d", // Or 'transparent' or whatever color you'd like
+                        },
+                        marginTop: "1rem",
+                    }}
+                    columns={columns}
+                    rows={rows}
+                    initialState={{
+                        pagination: {
+                            paginationModel: {
+                                pageSize: 50,
+                            },
+                        },
+                    }}
+                    disableRowSelectionOnClick
+                    autoHeight
+                    pageSizeOptions={[50]}
+                    disableColumnMenu
+                    disableColumnFilter
+                    disableColumnSelector
+                    disableEval
+                    getRowClassName={() => {
+                        return "row";
+                    }}
+                    getCellClassName={(params) => {
+                        if (params.field && params.field.length <= 2 && params.field !== "id") {
+                            return "q-solve-status";
+                        }
+                        return params.field;
+                    }}
+                />
+            </ThemeProvider>
         </Box>
     );
 }
