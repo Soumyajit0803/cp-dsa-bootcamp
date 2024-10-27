@@ -287,7 +287,7 @@ const Contest = () => {
             <Box>{data && (!error || !cferror) && <Typography variant="h5">{data.contest.name}</Typography>}</Box>
             <Box className="datagrid-wrapper">
                 {loading || cfloading ? (
-                    <Loading />
+                    <Loading cols={realColumns} />
                 ) : error || cferror ? (
                     <Error
                         message={
@@ -296,6 +296,7 @@ const Contest = () => {
                                 : "Unable to fetch data. Please try again"
                         }
                         error_code={error && error.response ? error.response.request.status : "API error"}
+                        cols = {cfcolumns}
                     />
                 ) : (
                     data && <CustomDataGrid rows={data.contest.rows} columns={realColumns} toshow={1} />

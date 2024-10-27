@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Box, Button, IconButton, TextField, ThemeProvider, Typography, createTheme } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import "./customdatagrid.css";
 import { useState } from "react";
 import { GridSearchIcon } from "@mui/x-data-grid";
@@ -167,6 +167,12 @@ function CustomDataGrid({ rows, columns, toshow, provideSearch }) {
                         }
                         return params.field;
                     }}
+                    // slots={{ toolbar: GridToolbar }}
+                    // slotProps={{
+                    //     toolbar: {
+                    //         showQuickFilter: true,
+                    //     },
+                    // }}
                 />
             </ThemeProvider>
         </Box>

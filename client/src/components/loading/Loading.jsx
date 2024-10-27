@@ -1,12 +1,40 @@
-import React from 'react'
-import "./Loading.css"
+import React from "react";
+import {
+    Box,
+    ThemeProvider,
+    createTheme,
+} from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
 
-const Loading = () => {
+const darkTheme = createTheme({
+    palette: {
+        mode: "dark",
+    },
+});
+
+const Loading = ({cols}) => {
     return (
-        <div className="loading">
-            <div className="spinner"></div>
-            <p>Loading...</p>
-        </div>
+        <ThemeProvider theme={darkTheme}>
+            <Box height={200}>
+                <DataGrid
+                    sx={{ width: "100%" }}
+                    rows={[]}
+                    columns={cols}
+                    loading
+                    slotProps={{
+                        loadingOverlay: {
+                            variant: "skeleton",
+                            noRowsVariant: "skeleton",
+                        },
+                    }}
+                    initialState={{
+                        pinnedColumns: {
+                            left: ["desk"],
+                        },
+                    }}
+                />
+            </Box>
+        </ThemeProvider>
     );
 };
 

@@ -1,16 +1,21 @@
 import * as React from "react";
 import "./leaderboard.css";
-import { Button, Tooltip, ButtonGroup, Box, Typography, SvgIcon, Avatar } from "@mui/material";
+import {
+    Button,
+    Tooltip,
+    ButtonGroup,
+    Box,
+    Typography,
+    SvgIcon,
+    Avatar,
+} from "@mui/material";
 import CustomDataGrid from "../../components/customdatagrid/customdatagrid";
-
 import userData from "../../../public/assets/data/data.json";
 import { useState, useEffect } from "react";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 import { GridLoadIcon } from "@mui/x-data-grid";
 import useFetchCF from "../../hooks/useFetchCF";
-
-// 🥇🥈🥉
 
 function CFTag(rating) {
     if (rating < 1200) {
@@ -99,7 +104,12 @@ const cfcolumns = [
             <Tooltip title={<Msg msg={`${params.row.rank}, ${params.row.name}`} />} arrow placement="right">
                 <a className="usr_name" href={`https://codeforces.com/profile/${params.value}`}>
                     <div className="usr">
-                        <Avatar sx={{ width: 28, height: 28, bgcolor: 'var(--text-gradient-1)' }} src={`${params.row.avatar}`}>{params.value[0].toUpperCase()}</Avatar>
+                        <Avatar
+                            sx={{ width: 28, height: 28, bgcolor: "var(--text-gradient-1)" }}
+                            src={`${params.row.avatar}`}
+                        >
+                            {params.value[0].toUpperCase()}
+                        </Avatar>
                         {params.value}
                     </div>
                     {/* {params.value} */}
@@ -207,7 +217,7 @@ const Leaderboard = () => {
             </ButtonGroup>
             <Box className="datagrid-wrapper">
                 {loading ? (
-                    <Loading />
+                    <Loading cols={cfcolumns} />
                 ) : error ? (
                     <Error
                         message={"API Fetching Failed. Please try again later"}
