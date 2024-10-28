@@ -15,7 +15,7 @@ const darkTheme = createTheme({
 const Loading = ({cols}) => {
     return (
         <ThemeProvider theme={darkTheme}>
-            <Box height={200}>
+            <Box height={400}>
                 <DataGrid
                     sx={{ width: "100%" }}
                     rows={[]}
