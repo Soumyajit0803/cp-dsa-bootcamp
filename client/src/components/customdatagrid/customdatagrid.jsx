@@ -66,7 +66,6 @@ function UserFound({ user }) {
 }
 
 function CustomDataGrid({ rows, columns, toshow, provideSearch }) {
-    console.log(rows);
     
     if (rows.length === 0) {
         return <CustomNoRowsOverlay cols={columns}></CustomNoRowsOverlay>

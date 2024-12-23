@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./Contest.css";
-import { Button, Tooltip, Box, TextField, Typography, Avatar } from "@mui/material";
+import { Button, Tooltip, Box, TextField, Typography, Avatar, Input } from "@mui/material";
 import CustomDataGrid from "../../components/customdatagrid/customdatagrid";
 import userData from "../../../public/assets/data/data.json";
 import { useState, useEffect } from "react";
@@ -211,13 +211,19 @@ for (let user of userData) {
 const Contest = () => {
     const [ContestID, setContestID] = useState(null);
     const [realColumns, setRealColumns] = useState([]);
-
     const { data, loading, error, callAPI } = useFetchCFcontest();
-
     const { data: cfdata, loading: cfloading, error: cferror } = useFetchCF(allHandles);
-
+    const [lastcontestID, setLastContestID] = useState('')
     const handleRating = {};
 
+    useEffect(() => {
+        const cwdata = JSON.parse(localStorage.getItem("CWData"))
+        if (cwdata !== null) {
+            setLastContestID(cwdata.ID)
+            setContestID(cwdata.ID)
+        }
+    }, [])
+    
     if (cfdata && data) {
         for (let user of cfdata) {
             handleRating[user.handle] = user.rating;
@@ -276,9 +282,11 @@ const Contest = () => {
             </div>
             <Box size="large" aria-label="coding website" className="button-group">
                 <input
+                    placeholder="enter contest ID"
                     className="text-field"
                     onChange={(e) => setContestID(e.target.value)}
                     onKeyDown={(e) => handleKeyDown(e)}
+                    defaultValue={lastcontestID}
                 />
                 <Button className={"table-swap"} size="large" onClick={handleClick}>
                     Show
