@@ -29,23 +29,31 @@ const useFetchContestWinners = () => {
             try {
                 const ID = await getLatestContestId();
                 setContestID(ID);
+                console.log("latest contest ID: " + ID);
+                
                 const currLoad = new Date().getTime();
                 const lastLoad = parseInt(localStorage.getItem("CWLoad"));
                 const cacheData = localStorage.getItem("CWData");
                 
                 if (cacheData !== null && lastLoad !== null) { 
                     setCache(JSON.parse(cacheData));
-                    console.log("cache is there");
-                    console.log(cache);
-                    
+                    setData(cache)
+                    // console.log("cache is there");
+                    // console.log(cache);
                 }
-
-                if (cache!==null && (lastLoad + INTERVAL > currLoad || cache["ID"] === contestID)) {
+                
+                console.log("Comparing these two IDs");
+                
+                console.log(cache);
+                console.log(contestID);
+                
+                if (cache!==null && (lastLoad + INTERVAL > currLoad || cache.ID === contestID)) {
                     console.log("Repeated data");
                     setData(cache);
                     setLoading(false);
                 } else {
-                    console.log(cache);
+                    // console.log(cache);
+                    console.log("New Contest");
                 }
                 
             } catch (err) {
@@ -72,23 +80,31 @@ const useFetchContestWinners = () => {
         .map((user) => user["Codeforce  Handle "]);
 
     // Fetch contest data using the latest contest ID
+    const { data: fetchedCFData, loading: cfloading, error: cferror, callAPI } = useFetchCFcontest();
+    // console.log(fetchedCFData);
     
-    const { data: fetchedCFData, cfloading, cferror, callAPI } = useFetchCFcontest();
     useEffect(() => {
-        if (contestID && (!cache)) {
+        if (contestID && (cache === null || (cache.ID !== contestID))) {
             console.log("Calling API");
             callAPI(allHandles, contestID);
+        } else {
+            console.log("API was not fetched damn");
+            console.log(contestID);
+            console.log(cache);
         }
-    }, [contestID]);
+    }, [contestID, cache]);
     
     useEffect(() => {
         if (fetchedCFData) {
             setCFdata(fetchedCFData);
+            console.log("CFDATA IS");
+            console.log(cfdata);
+            
         }
         if (cferror) {
             setError(cferror);
         } 
-    }, [fetchedCFData])
+    }, [cfdata, cfloading, cferror])
     
     const getWinners = async () => {
         try {
